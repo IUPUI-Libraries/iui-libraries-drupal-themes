@@ -1,11 +1,11 @@
 <header class="rvt-header-wrapper">
   <!-- Hidden link for keyboard users to skip to main content -->
   <a class="rvt-header-wrapper__skip-link" href="#main-content">Skip to main content</a>
-  <div class="rvt-header-global">
+  <div class="rvt-header-global rvt-border-bottom">
     <div class="rvt-container-xl">
       <div class="rvt-header-global__inner">
         <div class="rvt-header-global__logo-slot">
-          <a class="rvt-lockup" href="/">
+          <a class="rvt-lockup" href="https://indianapolis.iu.edu/">
             <!-- Trident logo -->
             <div class="rvt-lockup__tab">
               <svg xmlns="http://www.w3.org/2000/svg" class="rvt-lockup__trident" viewBox="0 0 28 34">
@@ -14,8 +14,7 @@
             </div>
             <!-- Website or application title -->
             <div class="rvt-lockup__body">
-              <span class="rvt-lockup__title">HOWDY! {{ head_title['name'] }}</span>
-              <span class="rvt-lockup__subtitle">Indianapolis</span>
+              <span class="rvt-lockup__title">Indiana University Indianapolis</span>
             </div>
           </a>
         </div>
@@ -93,5 +92,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="rvt-container-xl rvt-p-tb-md">
+    <a href="{{ path('<front>') }}" class="rvt-ts-lg rvt-text-decoration-none rvt-color-black" style="text-decoration: none;">
+      {{ head_title['name'] }}
+    </a>
   </div>
 </header>
