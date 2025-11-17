@@ -25,7 +25,51 @@ function iui_libraries_preprocess_page(array &$variables): void {
  * Implements hook_preprocess_HOOK() for node.html.twig.
  */
 function iui_libraries_preprocess_node(array &$variables): void {
-    $variables['iui_libraries_page_template'] = theme_get_setting('iui_libraries_page_template');
+  $variables['iui_libraries_page_template'] = theme_get_setting('iui_libraries_page_template');
+
+  // Add Updated By info to page content type
+  $node = $variables['node'];
+  
+  // Check if it's the page content type.
+  if ($node->bundle() === 'page') {
+    // Get the last updated timestamp.
+    $changed_timestamp = $node->getChangedTime();
+    
+    // Get the last updated user ID.
+    // Note from Gemini:
+    // The 'changed' field in Drupal nodes doesn't directly store the user, 
+    // so we'll fall back to the node author or the latest revision author.
+    // To get the true last editor, a custom module tracking revisions is often required, 
+    // but for simplicity, we'll try to find the last known user.
+    // The 'revision_user' field is often the best core alternative.
+    $revision_user = $node->getRevisionUser();
+
+    // Ensure we have a user to work with.
+    if ($revision_user) {
+      // Last updated username
+      // Use the author name as a fallback if the revision user is the same.
+      $variables['updated_by_name'] = $revision_user->getDisplayName();
+
+      // Last updated user picture 
+      // Copied from core/modules/node/node.module
+      $variables['updated_by_picture'] = \Drupal::entityTypeManager()
+        ->getViewBuilder('user')
+        ->view($revision_user, 'compact');
+
+    } else {
+      // Fallback for anonymous user or if no revision user is set
+      $variables['updated_by_name'] = t('Anonymous');
+      $variables['updated_by_picture'] = NULL;
+    }
+
+    // Last updated date
+    $variables['updated_date'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'time',
+      '#value' => \Drupal::service('date.formatter')->format($changed_timestamp, 'medium'), // Use a standard Drupal date format
+      '#attributes' => ['datetime' => \Drupal::service('date.formatter')->format($changed_timestamp, 'html_datetime')],
+    ];
+  }
 }
 
 function iui_libraries_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {

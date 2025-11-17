@@ -78,17 +78,28 @@
   {% if display_submitted %}
     <footer style="float: right;">
       <div class="rvt-display-inline-block">
-        <div class="rvt-avatar rvt-avatar--xs">
-          {{ author_picture }}
+        {% if updated_by_name %}
+          <div class="rvt-avatar rvt-avatar--xs" style="position: relative; top: 10px;">
+            {{ updated_by_picture }}
+          </div>
         </div>
-      </div>
-      <div class="rvt-display-inline-block">
-        <div{{author_attributes}}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-          {{ metadata }}
+        <div class="rvt-display-inline-block">
+          <div class="updated-by">
+            {% trans %}Updated by {{ updated_by_name }} on {{ updated_date }}{% endtrans %}
+            {{ metadata }}
+          </div>
+        {% else %}
+          <div class="rvt-avatar rvt-avatar--xs" style="position: relative; top: 10px;">
+            {{ author_picture }}
+          </div>
         </div>
+        <div class="rvt-display-inline-block">
+          <div{{author_attributes}}>
+            {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+            {{ metadata }}
+          </div>
+        {% endif %}
       </div>
     </footer>
   {% endif %}
-
 </article>
