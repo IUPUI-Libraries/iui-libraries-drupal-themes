@@ -27,7 +27,13 @@
  */
 #}
 
-<div class="rvt-hero{% if content.field_dark_background %} rvt-hero--bg-dark{% endif %}">
+{% if content.field_dark_background[0]['#markup'] == 'On' %}
+  {% set hero_classes = 'rvt-hero rvt-hero--bg-dark' %}
+{% else %}
+  {% set hero_classes = 'rvt-hero' %}
+{% endif %}
+
+<div class="{{ hero_classes }}">
     <div class="rvt-container-lg">
         <div class="rvt-hero__inner">
             <div class="rvt-hero__body [ rvt-flow ]">
