@@ -44,39 +44,14 @@
  */
 #}
 
-
-
-<header class="rvt-header-wrapper" role="banner">
-    
-    <!-- **********************************************************************
-        "Skip to main content" link for keyboard users
-    *********************************************************************** -->
-
-    <a class="rvt-header-wrapper__skip-link" href="#main-content">Skip to main content</a>
-    
-    <!-- **********************************************************************
-        Global header area
-    *********************************************************************** -->
-    
-    <div class="rvt-header-global">
-        <div class="rvt-container-lg">
-            <div class="rvt-header-global__inner">
-                {{ page.header }}
-            </div>
-        </div>
-    </div>
-</header>
-
   {{ page.primary_menu }}
   {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
 
   {{ page.highlighted }}
 
   {{ page.help }}
 
-  <main role="main" id="main-content" class="rvt-layout__wrapper rvt-layout__wrapper--details rvt-layout__detail rvt-container-lg">
+  <main role="main" id="main-content" class="rvt-layout__wrapper rvt-layout__wrapper--details rvt-layout__detail rvt-container-xl">
 
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
@@ -89,6 +64,7 @@
     {% endif %}
 
     <div class="rvt-layout__content">
+      {{ page.breadcrumb }}
       {{ page.content }}
     </div>{# /.layout-content #}
 
@@ -106,6 +82,6 @@
     </footer>
   {% endif %}
 
-{% include '@iui_libraries/static/iui_footer.html.twig' %}
+{% include '@iui_libraries/branding/iui_footer.html.twig' %}
 
 {# /.layout-container #}
