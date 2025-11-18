@@ -13,7 +13,11 @@
 #}
 {% if primary %}
   <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
-  <ul class="rvt-list-inline">{{ primary }}</ul>
+  <nav class="rvt-subnav" aria-label="Primary tabs">
+    <ul class="rvt-subnav__list">
+      {{ primary }}
+    </ul>
+  </nav>
 {% endif %}
 {% if secondary %}
   <h2 class="visually-hidden">{{ 'Secondary tabs'|t }}</h2>
