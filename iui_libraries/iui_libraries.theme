@@ -12,6 +12,10 @@ declare(strict_types=1);
  */
 function iui_libraries_preprocess_html(array &$variables): void {
   $variables['iui_libraries_page_template'] = theme_get_setting('iui_libraries_page_template');
+  $variables['iui_libraries_campus'] = theme_get_setting('iui_libraries_campus');
+  $variables['iui_libraries_top_url'] = theme_get_setting('iui_libraries_top_url');
+  $variables['slogan'] = \Drupal::config('system.site')->get('slogan');
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
 }
 
 /**
@@ -19,6 +23,10 @@ function iui_libraries_preprocess_html(array &$variables): void {
  */
 function iui_libraries_preprocess_page(array &$variables): void {
   $variables['iui_libraries_page_template'] = theme_get_setting('iui_libraries_page_template');
+  $variables['iui_libraries_campus'] = theme_get_setting('iui_libraries_campus');
+  $variables['iui_libraries_top_url'] = theme_get_setting('iui_libraries_top_url');
+  $variables['slogan'] = \Drupal::config('system.site')->get('slogan');
+  $variables['site_name'] = \Drupal::config('system.site')->get('name');
 }
 
 /**
@@ -26,6 +34,7 @@ function iui_libraries_preprocess_page(array &$variables): void {
  */
 function iui_libraries_preprocess_node(array &$variables): void {
   $variables['iui_libraries_page_template'] = theme_get_setting('iui_libraries_page_template');
+  $variables['iui_libraries_campus'] = theme_get_setting('iui_libraries_campus');
 
   // Add Updated By info to page content type
   $node = $variables['node'];
@@ -87,5 +96,22 @@ function iui_libraries_form_system_theme_settings_alter(&$form, \Drupal\Core\For
     ],
     '#default_value' => theme_get_setting('iui_libraries_page_template'),
     '#description'   => t('Place this text in the widget spot on your site.'),
+  ];
+  $form['iui_libraries_campus'] = [
+    '#type'          => 'select',
+    '#title'         => t('Campus Selection'),
+    '#options'       => [
+        'none' => 'None', 
+        'Indianapolis' => 'Indianapolis', 
+        'Columbus' => 'Columbus', 
+    ],
+    '#default_value' => theme_get_setting('iui_libraries_campus'),
+    '#description'   => t('Select your campus to enable campus-specific features.'),
+  ];
+  $form['iui_libraries_top_url'] = [
+    '#type'          => 'textfield',
+    '#title'         => t('Top URL (Alternate page template only)'),
+    '#default_value' => theme_get_setting('iui_libraries_top_url'),
+    '#description'   => t('Enter the URL for the top bar link. Leave blank to use the IU Indianapolis home page.'),
   ];
 }

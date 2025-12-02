@@ -44,7 +44,12 @@
  */
 #}
 
-  {{ page.primary_menu }}
+  {% if iui_libraries_page_template == 'alternate' %}
+    {% include '@iui_libraries/branding/iui_alt_header.html.twig' %}
+  {% else %}
+    {% include '@iui_libraries/branding/iui_header.html.twig' %}
+  {% endif %}
+
   {{ page.secondary_menu }}
 
   {{ page.featured }}
