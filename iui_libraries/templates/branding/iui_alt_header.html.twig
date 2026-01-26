@@ -29,9 +29,14 @@
       </div>
     </div>
   </div>
-  <div class="rvt-container-xl rvt-p-tb-md">
-    <a href="{{ path('<front>') }}" class="rvt-ts-lg rvt-text-decoration-none rvt-color-black" style="text-decoration: none;">
-      {{ site_name }}
-    </a>
+  <div class="rvt-header-local">
+    <div class="rvt-container rvt-container--center rvt-container-xl">
+      <div class="rvt-header-local__inner" data-rvt-disclosure="local-header-menu" data-rvt-close-click-outside style="align-items: flex-start !important; flex-direction: column;">
+        <a href="{{ path('<front>') }}" class="rvt-ts-sm rvt-color-black rvt-text-bold" style="text-decoration: none;">
+          {{ site_name }}
+        </a>
+        {{ page.secondary_menu }}
+      </div>
+    </div>
   </div>
 </header>
