@@ -1,0 +1,91 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link URL, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+
+ /**
+  * This is for a top navigation with no more than two levels deep.
+  * Menu block should be added to Primary menu region with a machine name of
+  * 'iui_libraries_topnavigation' by adding block description of "Top Navigation".
+  * 
+  * Configuration for the menu block:
+  * Initial visibility level: 1
+  * Number of levels to display: 2
+  * Expand all menu items: Checked
+  *
+  */
+
+#}
+{% import _self as top_menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see https://twig.symfony.com/doc/3.x/tags/macro.html
+#}
+{{ top_menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as top_menus %}
+  {% if items %}
+    {% if menu_level == 0 %}
+      {% set attributes = attributes.addClass('rvt-header-menu__list') %}
+      <ul{{ attributes }}>
+    {% else %}
+      <ul>
+    {% endif %}
+    {% for item in items %}
+      {% if item.below %}
+        <!-- Navigation link with dropdown -->
+        <li class="rvt-header-menu__item">
+          <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-nav-1">
+            <div class="rvt-header-menu__group">
+              <!-- Link that appears in header -->
+              <a class="rvt-header-menu__link" href="{{ item.url }}">{{ item.title }}</a>
+              <!-- Button that shows/hides dropdown links -->
+              <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="primary-nav-1">
+                <span class="rvt-sr-only">More sub-navigation links</span>
+                <svg class="rvt-global-toggle__open" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">  <path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"/></svg>
+              </button>
+            </div>
+            <!-- Dropdown menu -->
+            <div class="rvt-header-menu__submenu rvt-dropdown__menu rvt-dropdown__menu--right" data-rvt-dropdown-menu="primary-nav-1" hidden>
+              <ul class="rvt-header-menu__submenu-list">
+                <!-- Dropdown links -->
+                {% for sub_item in item.below %}
+                <li class="rvt-header-menu__submenu-item">
+                  <a class="rvt-header-menu__submenu-link" href="{{ sub_item.url }}">{{ sub_item.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </li>
+      {% else %}
+        {% set item_attributes = item.attributes %}
+        {% set item_attributes = item_attributes.addClass('rvt-header-menu__item') %}
+        <li{{ item.attributes }}>
+          {{ link(item.title, item.url , {'class': 'rvt-header-menu__link'}) }}
+          {% if item.below %}
+            {{ top_menus.menu_links(item.below, attributes, menu_level + 1) }}
+          {% endif %}
+        </li>
+      {% endif %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
