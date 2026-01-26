@@ -102,8 +102,12 @@ function iui_libraries_form_system_theme_settings_alter(&$form, \Drupal\Core\For
     '#title'         => t('Campus Selection'),
     '#options'       => [
         'none' => 'None', 
+        'Campus' => 'Campus',
+        'Bloomington' => 'Bloomington',
+        'Columbus' => 'Columbus',
+        'Fort Wayne' => 'Fort Wayne',
         'Indianapolis' => 'Indianapolis', 
-        'Columbus' => 'Columbus', 
+        'Kokomo' => 'Kokomo'
     ],
     '#default_value' => theme_get_setting('iui_libraries_campus'),
     '#description'   => t('Select your campus to enable campus-specific features.'),
