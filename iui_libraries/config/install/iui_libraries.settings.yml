@@ -1,3 +1,11 @@
 iui_libraries_page_template: 'default'
 iui_libraries_campus: 'none'
 iui_libraries_top_url: ''
+iui_libraries_footer: 'crimson'
+iui_libraries_footer_links:
+  0:
+    name: 'Accessibility'
+    url: 'https://accessibility.iu.edu/assistance/index.html'
+  1:
+    name: 'Privacy Notice'
+    url: '/privacy'
