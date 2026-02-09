@@ -1,11 +1,11 @@
-# IUI Rivets Custom Drupal Themes
+# IU Indianapolis Libraries Rivet Custom Drupal Themes
 
-Drupal sub themes built on [Drupal's stable9 base theme](https://www.drupal.org/docs/develop/theming-drupal/sub-theming-using-stablestable-9-as-a-base-theme) 
+Drupal sub themes built on the [Drupal's stable9 base theme](https://www.drupal.org/docs/develop/theming-drupal/sub-theming-using-stablestable-9-as-a-base-theme) 
 using [IU Rivet Design System](https://rivet.iu.edu/)
 
 ## Features
 
-Several options for the layout of the theme are available at Administration :: Appearance :: Appearance settings :: IU Indianapolis Libraries
+Several options for the layout of the theme are available at __Administration :: Appearance :: Appearance settings :: IU Indianapolis Libraries__.
 
 ### Default and Alternative Header
 
@@ -43,4 +43,4 @@ Multiple footer link can be added between the IU Footer's Trident and Copyright 
 
 ## Favicon
 
-Both the IU Trident and the UL Window favicons are included in the site. Creating a soft link in the root directory of a sub-theme can be used to point to the wanted favicon. The soft link must be names __favicon.png__.
+Both the IU Trident and the UL Window favicons are included in the site. Creating a soft link in the root directory of a sub-theme can be used to point to the wanted favicon. The soft link must be names __favicon.png__. The images are located in `iui_libraries/images/favicons/`.
