@@ -59,23 +59,37 @@
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
     {% if page.sidebar_first %}
-    <div class="rvt-layout__sidebar" id="section-nav">
+    <div class="rvt-layout__sidebar [ rvt-p-top-sm ]" id="section-nav">
       <aside class="layout-sidebar-first" role="complementary">
         {{ page.sidebar_first }}
       </aside>
     </div>
     {% endif %}
 
-    <div class="rvt-layout__content">
-      {{ page.breadcrumb }}
-      {{ page.content }}
+    <div class="rvt-layout__content [ rvt-p-top-sm ]">
+      {% if page.sidebar_second %}
+      <div class="rvt-row">
+        <div class="rvt-cols-8-md">
+          {{ page.breadcrumb }}
+          {{ page.content }}
+        </div>
+        <div class="rvts-cols-4-md">
+          <aside class="layout-sidebar-second" role="complementary">
+            {{ page.sidebar_second }}
+          </aside>
+        </div>
+      </div>
+      {% else %}
+        {{ page.breadcrumb }}
+        {{ page.content }}
+      {% endif %} 
     </div>{# /.layout-content #}
 
-    {% if page.sidebar_second %}
+    {# {% if page.sidebar_second %}
       <aside class="layout-sidebar-second" role="complementary">
         {{ page.sidebar_second }}
       </aside>
-    {% endif %}
+    {% endif %} #}
 
   </main>
 
