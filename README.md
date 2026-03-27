@@ -57,3 +57,13 @@ Both the IU Trident and the UL Window favicons are included in the site. Creatin
 
 ### SASS Styling
 
+SASS is deployed for creating all internal CSS files. This includes the primary `style.css` for the theme and `libguides.css` needed for SpringShare Libguides.
+
+__DO NOT__ edit `css/*.css` directly. Instead edit files in the `sass` directory then compile.
+
+`sass` must be installed on development environments for compiling CSS files. Use the following command while editing scss files to automatically compile when edits are saved:
+
+```
+cd [theme_root]
+sass --watch sass:css
+```
