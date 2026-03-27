@@ -3,6 +3,12 @@
 Drupal sub themes built on the [Drupal's stable9 base theme](https://www.drupal.org/docs/develop/theming-drupal/sub-theming-using-stablestable-9-as-a-base-theme) 
 using [IU Rivet Design System](https://rivet.iu.edu/)
 
+## Sections
+
+* [Features](#features)
+* [Configuration](#configurations)
+* [Development](#development)
+
 ## Features
 
 Several options for the layout of the theme are available at __Administration :: Appearance :: Appearance settings :: IU Indianapolis Libraries__.
@@ -41,6 +47,13 @@ Multiple footer link can be added between the IU Footer's Trident and Copyright 
 
 ![Footer links](./iui_libraries/images/docs/footer_links.png)
 
-## Favicon
+## Configurations
+
+### Favicon
 
 Both the IU Trident and the UL Window favicons are included in the site. Creating a soft link in the root directory of a sub-theme can be used to point to the wanted favicon. The soft link must be names __favicon.png__. The images are located in `iui_libraries/images/favicons/`.
+
+## Development
+
+### SASS Styling
+
