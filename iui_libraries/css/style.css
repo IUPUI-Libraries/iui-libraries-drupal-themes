@@ -1,0 +1,12 @@
+/* Base Element styles for the IUI Libraries theme. */
+/* Component styles for the IUI Libraries theme. */
+/* Theme styles for the IUI Libraries theme. */
+/* Dark Mode styles for the IUI Libraries theme. */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #ffffff;
+    background-color: #000000;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

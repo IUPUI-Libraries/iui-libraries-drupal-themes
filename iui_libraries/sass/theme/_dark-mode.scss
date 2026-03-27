@@ -1,0 +1,10 @@
+/* Dark Mode styles for the IUI Libraries theme. */
+
+
+// When the user has set their system to dark mode, apply these styles.
+@media (prefers-color-scheme: dark) {
+    body {
+        color: #ffffff;
+        background-color: #000000;
+    }
+}
