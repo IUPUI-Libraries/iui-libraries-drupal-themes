@@ -1,10 +1,12 @@
 /* Dark Mode styles for the IUI Libraries theme. */
 
+// Add utility variables for colors
+@use '../utility' as utils;
 
 // When the user has set their system to dark mode, apply these styles.
 @media (prefers-color-scheme: dark) {
     body {
-        color: #ffffff;
-        background-color: #000000;
+        color: utils.$dark-mode-text;
+        background-color: utils.$dark-mode-background;
     }
 }
