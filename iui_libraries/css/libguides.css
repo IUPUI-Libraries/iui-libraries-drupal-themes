@@ -1,8 +1,9 @@
 /* Dark Mode styles for the IUI Libraries theme. */
+/* Variables for IUI Libraries themes */
 @media (prefers-color-scheme: dark) {
   body {
     color: #ffffff;
-    background-color: #000000;
+    background-color: #072332;
   }
 }
 /* Libguide Button styles for the IUI Libraries theme. */
