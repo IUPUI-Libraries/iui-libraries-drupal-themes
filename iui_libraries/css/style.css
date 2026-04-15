@@ -4,10 +4,232 @@
 /* Dark Mode styles for the IUI Libraries theme. */
 /* Variables for IUI Libraries themes */
 @media (prefers-color-scheme: dark) {
-  body {
+  html.default_mode {
+    /* Link */
+    /* Primary Buttons */
+    /* Tables */
+    /* Forms */
+    /* Blocks */
+    /* Color Switch Icons */
+    /* QR Code Generator */
+    /* Rivet Timelines */
+  }
+  html.default_mode body {
     color: #ffffff;
     background-color: #072332;
   }
+  html.default_mode a {
+    color: #78acd9;
+    text-decoration: none;
+  }
+  html.default_mode a:hover {
+    color: #78acd9;
+    text-decoration: underline;
+  }
+  html.default_mode .rvt-lockup__title:hover, html.default_mode .rvt-lockup__subtitle:hover {
+    text-decoration: none;
+  }
+  html.default_mode .rvt-header-global {
+    background-color: #3b3b3b;
+    color: #ffffff;
+  }
+  html.default_mode .rvt-bg-black-000 {
+    background-color: #080808 !important;
+  }
+  html.default_mode .rvt-header-global,
+  html.default_mode .rvt-lockup__subtitle {
+    background-color: #3b3b3b;
+    color: #ffffff;
+  }
+  html.default_mode .rvt-header-global a,
+  html.default_mode .rvt-lockup__subtitle a {
+    color: #ffffff;
+  }
+  html.default_mode .rvt-header-global a:hover,
+  html.default_mode .rvt-lockup__subtitle a:hover {
+    color: #ffffff;
+    /*text-decoration: underline;*/
+  }
+  html.default_mode .rvt-footer-base--light {
+    background-color: #212121;
+    color: #ffffff;
+  }
+  html.default_mode .rvt-footer-base--light a {
+    color: #ffffff;
+  }
+  html.default_mode .rvt-footer-base--light a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  html.default_mode .primary-button, html.default_mode .primary-button:hover,
+  html.default_mode .restart-button, html.default_mode .restart-button:hover,
+  html.default_mode .create-button, html.default_mode .create-button:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  html.default_mode .rvt-table-responsive[role=region][tabindex] {
+    background: none;
+    background-color: inherit;
+    border-radius: 0;
+  }
+  html.default_mode .rvt-table-stripes tr:nth-child(even) {
+    background-color: #3b3b3b;
+  }
+  html.default_mode .rvt-table {
+    border: 1px solid;
+  }
+  html.default_mode .rvt-table,
+  html.default_mode .rvt-table thead {
+    background-color: #3b3b3b;
+  }
+  html.default_mode .rvt-text-input,
+  html.default_mode .rvt-datepicker__input {
+    color: #191919;
+    background-color: #d1d1d1;
+  }
+  html.default_mode .rvt-datepicker__input {
+    border-radius: 0.25rem;
+  }
+  html.default_mode .rvt-accordion__toggle:hover,
+  html.default_mode .rvt-accordion__toggle:hover span {
+    color: #ffffff;
+    background-color: #3b3b3b;
+  }
+  html.default_mode .rvt-card__content {
+    color: #ebebeb;
+  }
+  html.default_mode .rvt-card__content thead {
+    background: #3b3b3b;
+  }
+  html.default_mode .rvt-accordion__toggle-text {
+    color: #78acd9;
+  }
+  html.default_mode .mode-icon-svg {
+    fill: white;
+  }
+  html.default_mode label[for=colors-black] {
+    background-color: #d1d1d1;
+    padding: 0 5px;
+  }
+  html.default_mode .rvt-timeline__content {
+    background-color: #3b3b3b;
+  }
+  html.default_mode .rvt-timeline__date {
+    color: #ffffff;
+  }
+}
+html.dark_mode {
+  /* Link */
+  /* Primary Buttons */
+  /* Tables */
+  /* Forms */
+  /* Blocks */
+  /* Color Switch Icons */
+  /* QR Code Generator */
+  /* Rivet Timelines */
+}
+html.dark_mode body {
+  color: #ffffff;
+  background-color: #072332;
+}
+html.dark_mode a {
+  color: #78acd9;
+  text-decoration: none;
+}
+html.dark_mode a:hover {
+  color: #78acd9;
+  text-decoration: underline;
+}
+html.dark_mode .rvt-lockup__title:hover, html.dark_mode .rvt-lockup__subtitle:hover {
+  text-decoration: none;
+}
+html.dark_mode .rvt-header-global {
+  background-color: #3b3b3b;
+  color: #ffffff;
+}
+html.dark_mode .rvt-bg-black-000 {
+  background-color: #080808 !important;
+}
+html.dark_mode .rvt-header-global,
+html.dark_mode .rvt-lockup__subtitle {
+  background-color: #3b3b3b;
+  color: #ffffff;
+}
+html.dark_mode .rvt-header-global a,
+html.dark_mode .rvt-lockup__subtitle a {
+  color: #ffffff;
+}
+html.dark_mode .rvt-header-global a:hover,
+html.dark_mode .rvt-lockup__subtitle a:hover {
+  color: #ffffff;
+  /*text-decoration: underline;*/
+}
+html.dark_mode .rvt-footer-base--light {
+  background-color: #212121;
+  color: #ffffff;
+}
+html.dark_mode .rvt-footer-base--light a {
+  color: #ffffff;
+}
+html.dark_mode .rvt-footer-base--light a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+html.dark_mode .primary-button, html.dark_mode .primary-button:hover,
+html.dark_mode .restart-button, html.dark_mode .restart-button:hover,
+html.dark_mode .create-button, html.dark_mode .create-button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+html.dark_mode .rvt-table-responsive[role=region][tabindex] {
+  background: none;
+  background-color: inherit;
+  border-radius: 0;
+}
+html.dark_mode .rvt-table-stripes tr:nth-child(even) {
+  background-color: #3b3b3b;
+}
+html.dark_mode .rvt-table {
+  border: 1px solid;
+}
+html.dark_mode .rvt-table,
+html.dark_mode .rvt-table thead {
+  background-color: #3b3b3b;
+}
+html.dark_mode .rvt-text-input,
+html.dark_mode .rvt-datepicker__input {
+  color: #191919;
+  background-color: #d1d1d1;
+}
+html.dark_mode .rvt-datepicker__input {
+  border-radius: 0.25rem;
+}
+html.dark_mode .rvt-accordion__toggle:hover,
+html.dark_mode .rvt-accordion__toggle:hover span {
+  color: #ffffff;
+  background-color: #3b3b3b;
+}
+html.dark_mode .rvt-card__content {
+  color: #ebebeb;
+}
+html.dark_mode .rvt-card__content thead {
+  background: #3b3b3b;
+}
+html.dark_mode .rvt-accordion__toggle-text {
+  color: #78acd9;
+}
+html.dark_mode .mode-icon-svg {
+  fill: white;
+}
+html.dark_mode label[for=colors-black] {
+  background-color: #d1d1d1;
+  padding: 0 5px;
+}
+html.dark_mode .rvt-timeline__content {
+  background-color: #3b3b3b;
+}
+html.dark_mode .rvt-timeline__date {
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */

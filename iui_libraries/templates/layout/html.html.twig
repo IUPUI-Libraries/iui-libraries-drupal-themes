@@ -20,11 +20,14 @@
  * - placeholder_token: The token for generating head, css, js and js-bottom
  *   placeholders.
  *
+ * Add class default_mode to html element to set the default mode to light. 
+ * This allows the dark mode styles to be applied when the user has set their system to dark mode.
+ *
  * @see \Drupal\Core\Theme\ThemePreprocess::preprocessHtml()
  */
 #}
 <!DOCTYPE html>
-<html{{ html_attributes }}>
+<html{{ html_attributes.addClass('default_mode') }}>
   <head>
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ') }}</title>

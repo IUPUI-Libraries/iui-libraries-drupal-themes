@@ -3,10 +3,153 @@
 // Add utility variables for colors
 @use '../utility' as utils;
 
+@mixin dark_mode {
+  body {
+    color: utils.$dark-mode-text;
+    background-color: utils.$dark-mode-background;
+  }
+
+  /* Link */
+  a {
+    color: utils.$dark-mode-link;
+    text-decoration: none;
+  }
+
+ a:hover {
+    color: utils.$dark-mode-link;
+    text-decoration: underline;
+  }
+
+  .rvt-lockup__title:hover, .rvt-lockup__subtitle:hover {
+    text-decoration: none;
+  }
+
+  .rvt-header-global {
+    background-color: utils.$dark-mode-header;
+    color: utils.$dark-mode-text;
+  }
+
+  .rvt-bg-black-000  {
+    background-color: #080808 !important;
+  }
+
+  .rvt-header-global,
+  .rvt-lockup__subtitle {
+    background-color: #3b3b3b;
+    color: #ffffff;
+
+    a {
+      color: #ffffff;
+    }
+
+    a:hover {
+      color: #ffffff;
+      /*text-decoration: underline;*/
+    }
+  }
+
+  .rvt-footer-base--light {
+    background-color: #212121;
+    color: #ffffff;
+
+    a {
+      color: #ffffff;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  }
+
+  /* Primary Buttons */
+  .primary-button, .primary-button:hover, 
+  .restart-button, .restart-button:hover,
+  .create-button, .create-button:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Tables */
+  .rvt-table-responsive[role=region][tabindex] {
+    background: none;
+    background-color: inherit;
+    border-radius: 0;
+  }
+
+  .rvt-table-stripes {
+    tr:nth-child(even) {
+      background-color: #3b3b3b;
+    }
+  }
+
+  .rvt-table {
+    border: 1px solid;
+  }
+
+  .rvt-table,
+  .rvt-table thead  {
+    background-color: #3b3b3b;
+  }
+
+  /* Forms */
+  .rvt-text-input,
+  .rvt-datepicker__input {
+    color: #191919;
+    background-color: #d1d1d1;
+  }
+
+  .rvt-datepicker__input {
+    border-radius: 0.25rem;
+  }
+
+  /* Blocks */
+
+  .rvt-accordion__toggle:hover,
+  .rvt-accordion__toggle:hover span {
+    color: #ffffff;
+    background-color: #3b3b3b;
+  }
+
+  .rvt-card__content {
+    color: #ebebeb;
+  }
+
+  .rvt-card__content thead {
+    background: #3b3b3b;
+  }
+
+  /* Color Switch Icons */
+  .rvt-accordion__toggle-text {
+    color: #78acd9;
+  }
+  .mode-icon-svg {
+    fill: white;
+  }
+
+  /* QR Code Generator */
+  label[for=colors-black] {
+    background-color: #d1d1d1;
+    padding: 0 5px;
+  }
+
+  /* Rivet Timelines */
+  .rvt-timeline__content {
+    background-color: #3b3b3b;
+  }
+  .rvt-timeline__date {
+    color: #ffffff;
+  }
+}
+
 // When the user has set their system to dark mode, apply these styles.
 @media (prefers-color-scheme: dark) {
-    body {
-        color: utils.$dark-mode-text;
-        background-color: utils.$dark-mode-background;
-    }
+  html.default_mode {
+    @include dark_mode;
+  }
+}
+
+// When dark mode toggle is enabled, apply these styles.
+html.dark_mode {
+  @include dark_mode;
 }
