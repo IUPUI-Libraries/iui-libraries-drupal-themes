@@ -1,5 +1,12 @@
 /* Base Element styles for the IUI Libraries theme. */
 /* Component styles for the IUI Libraries theme. */
+/* Block Styles */
+.iui-featured-hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 /* Theme styles for the IUI Libraries theme. */
 /* Dark Mode styles for the IUI Libraries theme. */
 /* Variables for IUI Libraries themes */
