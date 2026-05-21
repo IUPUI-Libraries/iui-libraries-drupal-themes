@@ -64,7 +64,10 @@
 
   <!-- Page Title and Summary -->
   <div class="rvt-m-top-xxl rvt-m-top-md-md-up rvt-flow rvt-prose">
-    <h2 class="rvt-ts-lg">{{ node.title.value }}</h2>
+    {# Do not display titles beginning with colon #}
+    {% if node.title.value and not(node.title.value|render starts with ':') %}
+      <h2 class="rvt-ts-lg">{{ node.title.value }}</h2>
+    {% endif %}
     {% if node.body.summary %}
       <p class="rvt-ts-20 rvt-color-black-500">{{ node.body.summary }}</p>
       <hr>
