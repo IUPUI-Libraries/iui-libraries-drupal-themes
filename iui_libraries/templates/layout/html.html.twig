@@ -20,6 +20,10 @@
  * - placeholder_token: The token for generating head, css, js and js-bottom
  *   placeholders.
  *
+ * Note: Leading colons in page titles are used to prevent the title from 
+ *       being rendered in the page title area. Removed here from title tags if 
+ *       present.
+ *
  * @see \Drupal\Core\Theme\ThemePreprocess::preprocessHtml()
  */
 #}
@@ -27,7 +31,7 @@
 <html{{ html_attributes }}>
   <head>
     <head-placeholder token="{{ placeholder_token }}">
-    <title>{{ head_title|safe_join(' | ') }}</title>
+    <title>{{ head_title|safe_join(' | ')|trim(':', side='left') }}</title>
     <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.9.0/css/rivet.min.css">
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
