@@ -3,7 +3,51 @@
 @media (prefers-color-scheme: dark) {
   body {
     color: #ffffff;
-    background-color: #072332;
+    background-color: #212121;
+  }
+  a {
+    color: #ffffff;
+  }
+  a:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .rvt-header-global, .rvt-header-local {
+    color: #d1d1d1;
+    background-color: #212121;
+  }
+  .rvt-header-global span.rvt-lockup__title, .rvt-header-global span.rvt-lockup__subtitle, .rvt-header-local span.rvt-lockup__title, .rvt-header-local span.rvt-lockup__subtitle {
+    color: #d1d1d1;
+  }
+  .rvt-header-global a, .rvt-header-local a {
+    color: #d1d1d1;
+    text-decoration: underline;
+  }
+  .rvt-header-global a:hover, .rvt-header-local a:hover {
+    color: #d1d1d1;
+    text-decoration: none;
+  }
+  .rvt-header-menu__item--current .rvt-header-menu__link {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .rvt-header-local__title {
+    color: #d1d1d1;
+  }
+  .rvt-sidenav__label {
+    color: #d1d1d1;
+  }
+  .rvt-footer-base {
+    color: #ffffff;
+    background-color: #212121;
+  }
+  .rvt-footer-base a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  .rvt-footer-base a:hover {
+    color: #ffffff;
+    text-decoration: none;
   }
 }
 /* Libguide Button styles for the IUI Libraries theme. */
