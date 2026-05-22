@@ -43,15 +43,21 @@
   {% import _self as top_menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      {% set attributes = attributes.addClass('rvt-list-inline') %}
+      {% set attributes = attributes.addClass('rvt-header-menu__list') %}
       <ul{{ attributes }}>
     {% else %}
       <ul>
     {% endif %}
     {% for item in items %}
+      {% set item_attributes = item.attributes %}
+      {% set item_attributes = item_attributes.addClass('rvt-header-menu__item') %}
+      {# if link attributes include is_active, add active class to menu item #}
+      {% if item.in_active_trail %}
+        {% set item_attributes = item_attributes.addClass('rvt-header-menu__item--current') %}
+      {% endif %}
       {% if item.below %}
         <!-- Navigation link with dropdown -->
-        <li class="rvt-header-menu__item">
+        <li{{ item.attributes }}>
           <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-nav-1">
             <div class="rvt-header-menu__group">
               <!-- Link that appears in header -->
@@ -76,8 +82,7 @@
           </div>
         </li>
       {% else %}
-        {% set item_attributes = item.attributes %}
-        {% set item_attributes = item_attributes.addClass('rvt-header-menu__item') %}
+        <!-- Navigation link with no dropdown -->
         <li{{ item.attributes }}>
           {{ link(item.title, item.url , {'class': 'rvt-header-menu__link'}) }}
           {% if item.below %}
