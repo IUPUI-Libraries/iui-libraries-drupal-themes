@@ -101,6 +101,24 @@ function iui_libraries_preprocess_node(array &$variables): void {
   }
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for blocks.
+ */
+function iui_libraries_preprocess_block(array &$variables): void {
+  // Find block name if it's a menu
+  if (isset($variables['elements']['#base_plugin_id']) && $variables['elements']['#base_plugin_id'] === 'system_menu_block') {
+    $menu_name = $variables['elements']['#derivative_plugin_id'] ?? '';
+    
+    // Add variables to Top navigation menu
+    if ($menu_name === 'top-navigation') {
+      $variables['search_enabled'] = theme_get_setting('iui_libraries_primary_menu_search_enabled');
+      $variables['search_placeholder'] = theme_get_setting('iui_libraries_primary_menu_search_placeholder');
+      $variables['search_action'] = theme_get_setting('iui_libraries_primary_menu_search_action');
+      $variables['search_query_parameter'] = theme_get_setting('iui_libraries_primary_menu_search_query_parameter');
+    }
+  }
+}
+
 function iui_libraries_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
   // Work-around for a core bug affecting admin themes. See issue #943212.
   if (isset($form_id)) {
@@ -137,6 +155,30 @@ function iui_libraries_form_system_theme_settings_alter(&$form, \Drupal\Core\For
     '#title'         => t('Top URL (Alternate page template only)'),
     '#default_value' => theme_get_setting('iui_libraries_top_url'),
     '#description'   => t('Enter the URL for the top bar link. Leave blank to use the IU Indianapolis home page.'),
+  ];
+  $form['iui_libraries_primary_menu_search_enabled'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Enable Primary Menu Search Box'),
+    '#default_value' => theme_get_setting('iui_libraries_primary_menu_search_enabled'),
+    '#description'   => t('Check this box to enable the primary menu search.'),
+  ];
+  $form['iui_libraries_primary_menu_search_placeholder'] = [
+    '#type' => 'textfield',
+    '#title' => t('Primary Menu Search Placeholder'),
+    '#default_value' => theme_get_setting('iui_libraries_primary_menu_search_placeholder'),
+    '#description' => t('Placeholder text for the primary menu search input. Leave blank to use Drupal default.'),
+  ];
+  $form['iui_libraries_primary_menu_search_action'] = [
+    '#type' => 'textfield',
+    '#title' => t('Primary Menu Search Action URL'),
+    '#default_value' => theme_get_setting('iui_libraries_primary_menu_search_action'),
+    '#description' => t('Path primary menu search should submit to. Leave blank to use Drupal default.'),
+  ];
+  $form['iui_libraries_primary_menu_search_query_parameter'] = [
+    '#type' => 'textfield',
+    '#title' => t('Primary Menu Search Query Parameter'),
+    '#default_value' => theme_get_setting('iui_libraries_primary_menu_search_query_parameter'),
+    '#description' => t('Query parameter name for primary menu search. Leave blank to use Drupal default (keys).'),
   ];
   $form['iui_libraries_footer'] = [
     '#type'          => 'select',

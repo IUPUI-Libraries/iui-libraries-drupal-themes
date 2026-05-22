@@ -1,6 +1,10 @@
 iui_libraries_page_template: 'default'
 iui_libraries_campus: 'none'
 iui_libraries_top_url: ''
+iui_libraries_primary_menu_search_enabled: true
+iui_libraries_primary_menu_search_placeholder: 'Search Library Website'
+iui_libraries_primary_menu_search_action: ''
+iui_libraries_primary_menu_search_query_parameter: 'keys'
 iui_libraries_footer: 'crimson'
 iui_libraries_footer_links:
   0:

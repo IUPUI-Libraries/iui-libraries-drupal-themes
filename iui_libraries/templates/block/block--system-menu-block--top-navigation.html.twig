@@ -50,6 +50,7 @@
         {% endblock %}
     </nav>
     </div>
+    {% if search_enabled %}
     <!-- Search -->
     <div data-rvt-disclosure="search" data-rvt-close-click-outside>
     <!-- Button that shows/hides the search field -->
@@ -58,16 +59,18 @@
         <svg class="rvt-global-toggle__search" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">  <path d="M7 2a5 5 0 1 0 0 10A5 5 0 0 0 7 2ZM0 7a7 7 0 1 1 12.606 4.192l3.101 3.1-1.414 1.415-3.1-3.1A7 7 0 0 1 0 7Z"/></svg>
     </button>
     <!-- Search field -->
-    {# Assign action to search form. Should be base url + search path. #}
-    {% set search_path = path('<front>') ~ 'search/node' %}
+    {# Default action to search form. Should be base url + search path. #}
+    {% set search_path = search_action ?: (path('<front>') ~ 'search/node') %}
+    {% set search_param = search_query_parameter ?: 'keys' %}
     <form action="{{ search_path }}" class="rvt-header-global__search" data-rvt-disclosure-target="search" role="search" method="get" hidden>
         <label class="rvt-sr-only" for="search">Search</label>
         <div class="rvt-input-group">
-        <input title="Enter the terms you wish to search for." data-drupal-selector="edit-keys" type="search" id="edit-keys" name="keys" value="" maxlength="128" class="rvt-input-group__input rvt-text-input form-search">
+        <input title="{{ search_placeholder }}" placeholder="{{ search_placeholder }}" data-drupal-selector="edit-keys" type="search" id="edit-keys" name="{{ search_param }}" value="" maxlength="128" class="rvt-input-group__input rvt-text-input form-search">
         <div class="rvt-input-group__append">
             <button class="rvt-button">Search</button>
         </div>
         </div>
     </form>
     </div>
+    {% endif %}
 </div>
