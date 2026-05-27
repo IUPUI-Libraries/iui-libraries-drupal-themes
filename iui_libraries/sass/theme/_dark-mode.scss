@@ -3,8 +3,7 @@
 // Add utility variables for colors
 @use '../utility' as utils;
 
-// When the user has set their system to dark mode, apply these styles.
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
     body {
         color: utils.$cream;
         background-color: utils.$dark-mode-background;
@@ -69,5 +68,14 @@
             }
         }   
     }
+}
 
+// When the user has set their system to dark mode, apply these styles.
+// @media (prefers-color-scheme: dark) {
+//     @include dark-mode;
+// }
+
+// When the user has toggled dark mode on, apply these styles.
+html[data-theme="dark"] {
+    @include dark-mode;
 }
