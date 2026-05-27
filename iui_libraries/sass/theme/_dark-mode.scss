@@ -3,10 +3,79 @@
 // Add utility variables for colors
 @use '../utility' as utils;
 
-// When the user has set their system to dark mode, apply these styles.
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
     body {
-        color: utils.$dark-mode-text;
+        color: utils.$cream;
         background-color: utils.$dark-mode-background;
     }
+
+    a {
+        color: utils.$cream;
+
+        &:hover {
+            color: utils.$cream;
+            text-decoration: none;
+        }
+    }
+
+    // Rivet dark mode overrides
+    .rvt-header-global, .rvt-header-local {
+        color: utils.$dark-mode-text;
+        background-color: utils.$dark-mode-background;
+
+        span.rvt-lockup__title, span.rvt-lockup__subtitle {
+            color: utils.$dark-mode-text;
+        }
+
+        a {
+            color: utils.$dark-mode-text;
+            text-decoration: underline;
+
+            &:hover {
+                color: utils.$dark-mode-text;
+                text-decoration: none;
+            }
+        }
+    }
+
+    .rvt-header-menu__item--current {
+
+        .rvt-header-menu__link {
+            color: utils.$cream;
+            text-decoration: none;
+        }
+    }
+
+    .rvt-header-local__title {
+        color: utils.$dark-mode-text;
+    }
+
+    .rvt-sidenav__label {
+        color: utils.$dark-mode-text;
+    }
+
+    .rvt-footer-base {
+        color: utils.$cream;
+        background-color: utils.$dark-mode-background;
+
+        a {
+            color: utils.$cream;
+            text-decoration: underline;
+
+            &:hover {
+                color: utils.$cream;
+                text-decoration: none;
+            }
+        }   
+    }
+}
+
+// When the user has set their system to dark mode, apply these styles.
+// @media (prefers-color-scheme: dark) {
+//     @include dark-mode;
+// }
+
+// When the user has toggled dark mode on, apply these styles.
+html[data-theme="dark"] {
+    @include dark-mode;
 }

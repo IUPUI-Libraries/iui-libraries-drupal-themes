@@ -1,11 +1,54 @@
 /* Dark Mode styles for the IUI Libraries theme. */
 /* Variables for IUI Libraries themes */
-@media (prefers-color-scheme: dark) {
-  body {
-    color: #ffffff;
-    background-color: #072332;
-  }
+html[data-theme=dark] body {
+  color: #ffffff;
+  background-color: #212121;
 }
+html[data-theme=dark] a {
+  color: #ffffff;
+}
+html[data-theme=dark] a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+html[data-theme=dark] .rvt-header-global, html[data-theme=dark] .rvt-header-local {
+  color: #d1d1d1;
+  background-color: #212121;
+}
+html[data-theme=dark] .rvt-header-global span.rvt-lockup__title, html[data-theme=dark] .rvt-header-global span.rvt-lockup__subtitle, html[data-theme=dark] .rvt-header-local span.rvt-lockup__title, html[data-theme=dark] .rvt-header-local span.rvt-lockup__subtitle {
+  color: #d1d1d1;
+}
+html[data-theme=dark] .rvt-header-global a, html[data-theme=dark] .rvt-header-local a {
+  color: #d1d1d1;
+  text-decoration: underline;
+}
+html[data-theme=dark] .rvt-header-global a:hover, html[data-theme=dark] .rvt-header-local a:hover {
+  color: #d1d1d1;
+  text-decoration: none;
+}
+html[data-theme=dark] .rvt-header-menu__item--current .rvt-header-menu__link {
+  color: #ffffff;
+  text-decoration: none;
+}
+html[data-theme=dark] .rvt-header-local__title {
+  color: #d1d1d1;
+}
+html[data-theme=dark] .rvt-sidenav__label {
+  color: #d1d1d1;
+}
+html[data-theme=dark] .rvt-footer-base {
+  color: #ffffff;
+  background-color: #212121;
+}
+html[data-theme=dark] .rvt-footer-base a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+html[data-theme=dark] .rvt-footer-base a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 /* Libguide Button styles for the IUI Libraries theme. */
 .s-lg-hp-btn-section {
   background-color: #006298;

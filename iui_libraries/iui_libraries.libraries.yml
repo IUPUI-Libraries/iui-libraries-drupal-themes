@@ -5,6 +5,9 @@ global:
   css:
       theme:
         css/style.css: {}
+  dependencies:
+    - core/drupal
+    - core/once
     # base:
     #   css/base/elements.css: {}
     # component:
