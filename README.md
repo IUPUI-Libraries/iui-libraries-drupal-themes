@@ -6,6 +6,7 @@ using [IU Rivet Design System](https://rivet.iu.edu/)
 ## Sections
 
 * [Features](#features)
+* [Custom Blocks and Menus](#custom-blocks-and-menus)
 * [Configuration](#configurations)
 * [Development](#development)
 
@@ -47,11 +48,51 @@ Multiple footer link can be added between the IU Footer's Trident and Copyright 
 
 ![Footer links](./iui_libraries/images/docs/footer_links.png)
 
+## Custom Blocks and Menus
+
+### Rivet Featured Hero
+
+A block type for [IU Rivet Heroes](https://rivet.iu.edu/components/hero/) is available. These blocks would generally be used in the __Featured__, __Content__, and __Footer__ regions. Available fields include:
+
+* Eyebrow
+* Body
+* Action Link
+* Image
+* Image Caption
+* Dark Background toggle
+* Background Image 
+
+### Rivet Card
+
+A block type for [IU Rivet Cards](https://rivet.iu.edu/components/card/) is available. Generally these blocks would be added to the __Sidebar second__ region. Fields available include:
+
+* Card Title
+* Card Content
+* Title Link
+* Image
+* Eyebrow
+* Metadata
+
+### Top Navigation Menu | Block
+
+Special features are available for a menu that meets the following criteria:
+
+* Is named `Top navigation`
+* Block for this menu is placed in `Primary menu` region
+
+Besides the menu links, an optional search icon and box are avalable. Settings for this search box are in the IU Indianapolis Librariries theme settings. Options include enabling, form action, text field name, and text field placeholder. Leaving action and name fields empty will result in default Drupal search page.
+
+![Top navigation menu block](./iui_libraries/images/docs/top_navigation.png)
+
+__Example Result__
+
+![Top navigation menu block](./iui_libraries/images/docs/top_navigation_example.png)
+
 ## Configurations
 
 ### Favicon
 
-Both the IU Trident and the UL Window favicons are included in the site. Creating a soft link in the root directory of a sub-theme can be used to point to the wanted favicon. The soft link must be names __favicon.png__. The images are located in `iui_libraries/images/favicons/`.
+Both the IU Trident and the UL Window favicons are included in the site. Creating a soft link in the root directory of a sub-theme can be used to point to the wanted favicon. The soft link must be named __favicon.png__. The images are located in `iui_libraries/images/favicons/`.
 
 ## Development
 
