@@ -33,7 +33,7 @@
   {% set hero_classes = 'rvt-hero iui-featured-hero' %}
 {% endif %}
 
-<div class="{{ hero_classes }}"{% if content.field_background_image|render %} style="background-image: url({{ file_url(content.field_background_image.0['#item'].entity.uri.value) }})"{% endif %}>
+<div id="{{ attributes.id }}" class="{{ hero_classes }}"{% if content.field_background_image|render %} style="background-image: url({{ file_url(content.field_background_image.0['#item'].entity.uri.value) }})"{% endif %}>
     <div class="rvt-container-lg">
         <div class="rvt-hero__inner">
             <div class="rvt-hero__body [ rvt-flow ]">
