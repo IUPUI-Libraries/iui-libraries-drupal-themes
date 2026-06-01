@@ -33,7 +33,16 @@
  */
 #}
 
-<div class="rvt-header-global__controls">
+{%
+  set classes = [
+    'rvt-header-global__controls',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    
     <!-- Navigation -->
     <div data-rvt-disclosure="menu" data-rvt-close-click-outside>
     <!-- Menu button that shows/hides navigation on smaller screens -->

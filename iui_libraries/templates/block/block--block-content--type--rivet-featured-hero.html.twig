@@ -27,23 +27,40 @@
  */
 #}
 
-{% if content.field_dark_background[0]['#markup'] == 'On' %}
-  {% set hero_classes = 'rvt-hero rvt-hero--bg-dark iui-featured-hero' %}
-{% else %}
-  {% set hero_classes = 'rvt-hero iui-featured-hero' %}
+{# Add hero classes #}
+{%
+  set hero_classes = [
+    'rvt-hero',
+    'iui-featured-hero',
+  ]
+%}
+
+{# Add dark mode class if enabled #}
+{% if content['#block_content'].field_dark_background.value == 1 %}
+  {% set hero_classes = hero_classes|merge(['rvt-hero--bg-dark']) %}
 {% endif %}
 
-<div id="{{ attributes.id }}" class="{{ hero_classes }}"{% if content.field_background_image|render %} style="background-image: url({{ file_url(content.field_background_image.0['#item'].entity.uri.value) }})"{% endif %}>
+{% set attributes = attributes.addClass(hero_classes) %}
+
+{% if content.field_background_image|render %}
+  {% set bg_url = file_url(content.field_background_image.0['#item'].entity.uri.value) %}
+  {% set attributes = attributes.setAttribute('style', 'background-image: url(' ~ bg_url ~ ');') %}
+{% endif %}
+
+<div{{ attributes }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+
     <div class="rvt-container-lg">
         <div class="rvt-hero__inner">
             <div class="rvt-hero__body [ rvt-flow ]">
                 <span class="rvt-hero__eyebrow">{{ content.field_eyebrow }}</span>
-                {{ title_prefix }}
+
                 {% if label %}
                     {% set title_attributes = title_attributes.addClass('rvt-hero__title') %}
                     <h2{{ title_attributes }}>{{ label }}</h2>
                 {% endif %}
-                {{ title_suffix }}
+
                 <div class="rvt-hero__teaser">
                     <p>{{ content.body }}</p>
                 </div>

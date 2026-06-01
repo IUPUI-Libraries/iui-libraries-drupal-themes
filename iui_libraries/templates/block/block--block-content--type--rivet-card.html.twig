@@ -27,18 +27,30 @@
  */
 #}
 
-<div id="{{ attributes.id }}" class="rvt-card rvt-card--raised">
-    {% if content.field_card_image|render %}
-      <div class="rvt-card__image">
-        {{ content.field_card_image }}
-      </div>
-    {% endif %}
-    <div class="rvt-card__body">
+{%
+  set classes = [
+    'rvt-card',
+    'rvt-card--raised',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {% if content.field_card_image|render %}
+  <div class="rvt-card__image">
+    {{ content.field_card_image }}
+  </div>
+  {% endif %}
+    
+  <div class="rvt-card__body">
     {% if content.field_card_eyebrow %}
-        <div class="rvt-card__eyebrow">
-          {{ content.field_card_eyebrow }}
-        </div>
+    <div class="rvt-card__eyebrow">
+      {{ content.field_card_eyebrow }}
+    </div>
     {% endif %}
+
     <h2 class="rvt-card__title">
       {% if content.field_link %}
         <a href="{{ content.field_link['#url'] }}">{{ content.field_card_title }}</a>
@@ -46,13 +58,15 @@
         {{ content.field_card_title }}
       {% endif %}
     </h2>
+
     <div class="rvt-card__content [ rvt-flow ]">
         {{ content.field_card_content }}
     </div>
+
     {% if content.field_metadata %}
-        <div class="rvt-card__meta">
-            {{ content.field_metadata }}
-        </div>
-    {% endif %}
+    <div class="rvt-card__meta">
+        {{ content.field_metadata }}
     </div>
+    {% endif %}
+  </div>
 </div>
