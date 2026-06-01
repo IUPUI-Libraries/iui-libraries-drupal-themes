@@ -28,7 +28,7 @@
 #}
 
 <div class="rvt-card rvt-card--raised">
-    {% if content.field_card_image %}
+    {% if content.field_card_image|render %}
       <div class="rvt-card__image">
         {{ content.field_card_image }}
       </div>
