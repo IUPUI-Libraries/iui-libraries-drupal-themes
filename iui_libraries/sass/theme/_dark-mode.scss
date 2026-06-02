@@ -9,7 +9,7 @@
         background-color: utils.$dark-mode-background;
     }
 
-    a {
+    a:not(.toolbar-icon) {
         color: utils.$cream;
 
         &:hover {
@@ -38,6 +38,12 @@
         }
     }
 
+    .rvt-header-menu__submenu {
+        background-color: #080808;
+        border: 2px solid #016298;
+        box-shadow: 0 0 15px #44697d;
+    }
+
     .rvt-header-menu__item--current {
 
         .rvt-header-menu__link {
@@ -54,6 +60,10 @@
         color: utils.$dark-mode-text;
     }
 
+    .rvt-sidenav__link[aria-current="page"]{
+        background-color: utils.$dark-mode-background;
+    }
+
     .rvt-footer-base {
         color: utils.$cream;
         background-color: utils.$dark-mode-background;
@@ -68,12 +78,14 @@
             }
         }   
     }
+
+    // IUI Libraries dark mode overrides
+    .iui-page-summary {
+        // Important needed to override Rivet's important tag.
+        color: utils.$cream !important;
+    }
 }
 
-// When the user has set their system to dark mode, apply these styles.
-// @media (prefers-color-scheme: dark) {
-//     @include dark-mode;
-// }
 
 // When the user has toggled dark mode on, apply these styles.
 html[data-theme="dark"] {
