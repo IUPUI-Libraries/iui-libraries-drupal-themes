@@ -19,10 +19,10 @@ html[data-theme=dark] body {
   color: #ffffff;
   background-color: #212121;
 }
-html[data-theme=dark] a {
+html[data-theme=dark] a:not(.toolbar-icon) {
   color: #ffffff;
 }
-html[data-theme=dark] a:hover {
+html[data-theme=dark] a:not(.toolbar-icon):hover {
   color: #ffffff;
   text-decoration: none;
 }
@@ -41,6 +41,11 @@ html[data-theme=dark] .rvt-header-global a:hover, html[data-theme=dark] .rvt-hea
   color: #d1d1d1;
   text-decoration: none;
 }
+html[data-theme=dark] .rvt-header-menu__submenu {
+  background-color: #080808;
+  border: 2px solid #016298;
+  box-shadow: 0 0 15px #44697d;
+}
 html[data-theme=dark] .rvt-header-menu__item--current .rvt-header-menu__link {
   color: #ffffff;
   text-decoration: none;
@@ -50,6 +55,9 @@ html[data-theme=dark] .rvt-header-local__title {
 }
 html[data-theme=dark] .rvt-sidenav__label {
   color: #d1d1d1;
+}
+html[data-theme=dark] .rvt-sidenav__link[aria-current=page] {
+  background-color: #212121;
 }
 html[data-theme=dark] .rvt-footer-base {
   color: #ffffff;
@@ -62,6 +70,9 @@ html[data-theme=dark] .rvt-footer-base a {
 html[data-theme=dark] .rvt-footer-base a:hover {
   color: #ffffff;
   text-decoration: none;
+}
+html[data-theme=dark] .iui-page-summary {
+  color: #ffffff !important;
 }
 
 /*# sourceMappingURL=style.css.map */
