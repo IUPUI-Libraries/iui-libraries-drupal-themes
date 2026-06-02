@@ -7,6 +7,11 @@
   background-position: center;
 }
 
+.iui-sidebar-second-image-restrict {
+  max-width: 16rem;
+  height: auto;
+}
+
 /* Theme styles for the IUI Libraries theme. */
 /* Dark Mode styles for the IUI Libraries theme. */
 /* Variables for IUI Libraries themes */
