@@ -49,27 +49,20 @@
     'rvt-p-lr-md'
   ]
 %}
-{% set raw_bcolor = paragraph.field_background_color.value %}
-{% set rvt_bg_map = {
-  'crimson': 'rvt-bg-crimson',
-  'cream': 'rvt-bg-white',
-  'brown': 'rvt-bg-crimson-700',
-  'grey': 'rvt-bg-black-100'
-} %}
-{% set rvt_text_map = {
-  'crimson': 'rvt-color-white',
-  'brown': 'rvt-color-white',
-  'cream': 'rvt-color-black-700',
-  'grey': 'rvt-color-black-700'
-} %}
-{% if raw_bcolor and rvt_bg_map[raw_bcolor] %}
-  {% set classes = classes|merge([rvt_bg_map[raw_bcolor]]) %}
+
+{% set bg_color = paragraph.field_background_color.value %}
+{% set font_color = paragraph.field_font_color.value %}
+
+{% if bg_color is not empty %}
+  {% set classes = classes|merge([bg_color]) %}
 {% endif %}
-{% if raw_bcolor and rvt_text_map[raw_bcolor] %}
-  {% set classes = classes|merge([rvt_text_map[raw_bcolor]]) %}
+
+{% if font_color is not empty %}
+  {% set classes = classes|merge([font_color]) %}
 {% endif %}
+
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }} style="{# breakout_styles #}">
+  <div{{ attributes.addClass(classes) }} >
     <div class="rvt-container-xl rvt-p-lr-md">
       <div class="rvt-layout__content [ rvt-p-top-sm ] rvt-p-bottom-none">
         {% block content %}

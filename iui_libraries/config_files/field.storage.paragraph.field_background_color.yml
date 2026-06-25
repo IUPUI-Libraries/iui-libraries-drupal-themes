@@ -1,0 +1,149 @@
+uuid: b7900052-9135-4307-8bd1-bc9f0bafaaec
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_background_color
+field_name: field_background_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    - value: rvt-bg-white
+      label: White
+    - value: rvt-bg-black
+      label: Black
+    - value: rvt-bg-black-000
+      label: 'Black 000'
+    - value: rvt-bg-black-100
+      label: 'Black 100'
+    - value: rvt-bg-black-200
+      label: 'Black 200'
+    - value: rvt-bg-black-300
+      label: 'Black 300'
+    - value: rvt-bg-black-400
+      label: 'Black 400'
+    - value: rvt-bg-black-500
+      label: 'Black 500'
+    - value: rvt-bg-black-600
+      label: 'Black 600'
+    - value: rvt-bg-black-700
+      label: 'Black 700'
+    - value: rvt-bg-crimson
+      label: Crimson
+    - value: rvt-bg-crimson-000
+      label: 'Crimson 000'
+    - value: rvt-bg-crimson-100
+      label: 'Crimson 100'
+    - value: rvt-bg-crimson-200
+      label: 'Crimson 200'
+    - value: rvt-bg-crimson-300
+      label: 'Crimson 300'
+    - value: rvt-bg-crimson-400
+      label: 'Crimson 400'
+    - value: rvt-bg-crimson-500
+      label: 'Crimson 500'
+    - value: rvt-bg-crimson-600
+      label: 'Crimson 600'
+    - value: rvt-bg-crimson-700
+      label: 'Crimson 700'
+    - value: rvt-bg-blue
+      label: Blue
+    - value: rvt-bg-blue-000
+      label: 'Blue 000'
+    - value: rvt-bg-blue-100
+      label: 'Blue 100'
+    - value: rvt-bg-blue-200
+      label: 'Blue 200'
+    - value: rvt-bg-blue-300
+      label: 'Blue 300'
+    - value: rvt-bg-blue-400
+      label: 'Blue 400'
+    - value: rvt-bg-blue-500
+      label: 'Blue 500'
+    - value: rvt-bg-blue-600
+      label: 'Blue 600'
+    - value: rvt-bg-blue-700
+      label: 'Blue 700'
+    - value: rvt-bg-green
+      label: Green
+    - value: rvt-bg-green-000
+      label: 'Green 000'
+    - value: rvt-bg-green-100
+      label: 'Green 100'
+    - value: rvt-bg-green-200
+      label: 'Green 200'
+    - value: rvt-bg-green-300
+      label: 'Green 300'
+    - value: rvt-bg-green-400
+      label: 'Green 400'
+    - value: rvt-bg-green-500
+      label: 'Green 500'
+    - value: rvt-bg-green-600
+      label: 'Green 600'
+    - value: rvt-bg-green-700
+      label: 'Green 700'
+    - value: rvt-bg-gold
+      label: Gold
+    - value: rvt-bg-gold-000
+      label: 'Gold 000'
+    - value: rvt-bg-gold-100
+      label: 'Gold 100'
+    - value: rvt-bg-gold-200
+      label: 'Gold 200'
+    - value: rvt-bg-gold-300
+      label: 'Gold 300'
+    - value: rvt-bg-gold-400
+      label: 'Gold 400'
+    - value: rvt-bg-gold-500
+      label: 'Gold 500'
+    - value: rvt-bg-gold-600
+      label: 'Gold 600'
+    - value: rvt-bg-gold-700
+      label: 'Gold 700'
+    - value: rvt-bg-orange
+      label: Orange
+    - value: rvt-bg-orange-000
+      label: 'Orange 000'
+    - value: rvt-bg-orange-100
+      label: 'Orange 100'
+    - value: rvt-bg-orange-200
+      label: 'Orange 200'
+    - value: rvt-bg-orange-300
+      label: 'Orange 300'
+    - value: rvt-bg-orange-400
+      label: 'Orange 400'
+    - value: rvt-bg-orange-500
+      label: 'Orange 500'
+    - value: rvt-bg-orange-600
+      label: 'Orange 600'
+    - value: rvt-bg-orange-700
+      label: 'Orange 700'
+    - value: rvt-bg-purple
+      label: Purple
+    - value: rvt-bg-purple-000
+      label: 'Purple 000'
+    - value: rvt-bg-purple-100
+      label: 'Purple 100'
+    - value: rvt-bg-purple-200
+      label: 'Purple 200'
+    - value: rvt-bg-purple-300
+      label: 'Purple 300'
+    - value: rvt-bg-purple-400
+      label: 'Purple 400'
+    - value: rvt-bg-purple-500
+      label: 'Purple 500'
+    - value: rvt-bg-purple-600
+      label: 'Purple 600'
+    - value: rvt-bg-purple-700
+      label: 'Purple 700'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
