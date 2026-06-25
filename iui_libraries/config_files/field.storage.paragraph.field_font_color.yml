@@ -1,0 +1,149 @@
+uuid: f658f2cc-1c7f-463b-bcf4-b232fd4f7ff8
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_font_color
+field_name: field_font_color
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    - value: rvt-color-white
+      label: White
+    - value: rvt-color-black
+      label: Black
+    - value: rvt-color-black-000
+      label: 'Black 000'
+    - value: rvt-color-black-100
+      label: 'Black 100'
+    - value: rvt-color-black-200
+      label: 'Black 200'
+    - value: rvt-color-black-300
+      label: 'Black 300'
+    - value: rvt-color-black-400
+      label: 'Black 400'
+    - value: rvt-color-black-500
+      label: 'Black 500'
+    - value: rvt-color-black-600
+      label: 'Black 600'
+    - value: rvt-color-black-700
+      label: 'Black 700'
+    - value: rvt-color-crimson
+      label: Crimson
+    - value: rvt-color-crimson-000
+      label: 'Crimson 000'
+    - value: rvt-color-crimson-100
+      label: 'Crimson 100'
+    - value: rvt-color-crimson-200
+      label: 'Crimson 200'
+    - value: rvt-color-crimson-300
+      label: 'Crimson 300'
+    - value: rvt-color-crimson-400
+      label: 'Crimson 400'
+    - value: rvt-color-crimson-500
+      label: 'Crimson 500'
+    - value: rvt-color-crimson-600
+      label: 'Crimson 600'
+    - value: rvt-color-crimson-700
+      label: 'Crimson 700'
+    - value: rvt-color-blue
+      label: Blue
+    - value: rvt-color-blue-000
+      label: 'Blue 000'
+    - value: rvt-color-blue-100
+      label: 'Blue 100'
+    - value: rvt-color-blue-200
+      label: 'Blue 200'
+    - value: rvt-color-blue-300
+      label: 'Blue 300'
+    - value: rvt-color-blue-400
+      label: 'Blue 400'
+    - value: rvt-color-blue-500
+      label: 'Blue 500'
+    - value: rvt-color-blue-600
+      label: 'Blue 600'
+    - value: rvt-color-blue-700
+      label: 'Blue 700'
+    - value: rvt-color-green
+      label: Green
+    - value: rvt-color-green-000
+      label: 'Green 000'
+    - value: rvt-color-green-100
+      label: 'Green 100'
+    - value: rvt-color-green-200
+      label: 'Green 200'
+    - value: rvt-color-green-300
+      label: 'Green 300'
+    - value: rvt-color-green-400
+      label: 'Green 400'
+    - value: rvt-color-green-500
+      label: 'Green 500'
+    - value: rvt-color-green-600
+      label: 'Green 600'
+    - value: rvt-color-green-700
+      label: 'Green 700'
+    - value: rvt-color-gold
+      label: Gold
+    - value: rvt-color-gold-000
+      label: 'Gold 000'
+    - value: rvt-color-gold-100
+      label: 'Gold 100'
+    - value: rvt-color-gold-200
+      label: 'Gold 200'
+    - value: rvt-color-gold-300
+      label: 'Gold 300'
+    - value: rvt-color-gold-400
+      label: 'Gold 400'
+    - value: rvt-color-gold-500
+      label: 'Gold 500'
+    - value: rvt-color-gold-600
+      label: 'Gold 600'
+    - value: rvt-color-gold-700
+      label: 'Gold 700'
+    - value: rvt-color-orange
+      label: Orange
+    - value: rvt-color-orange-000
+      label: 'Orange 000'
+    - value: rvt-color-orange-100
+      label: 'Orange 100'
+    - value: rvt-color-orange-200
+      label: 'Orange 200'
+    - value: rvt-color-orange-300
+      label: 'Orange 300'
+    - value: rvt-color-orange-400
+      label: 'Orange 400'
+    - value: rvt-color-orange-500
+      label: 'Orange 500'
+    - value: rvt-color-orange-600
+      label: 'Orange 600'
+    - value: rvt-color-orange-700
+      label: 'Orange 700'
+    - value: rvt-color-purple
+      label: Purple
+    - value: rvt-color-purple-000
+      label: 'Purple 000'
+    - value: rvt-color-purple-100
+      label: 'Purple 100'
+    - value: rvt-color-purple-200
+      label: 'Purple 200'
+    - value: rvt-color-purple-300
+      label: 'Purple 300'
+    - value: rvt-color-purple-400
+      label: 'Purple 400'
+    - value: rvt-color-purple-500
+      label: 'Purple 500'
+    - value: rvt-color-purple-600
+      label: 'Purple 600'
+    - value: rvt-color-purple-700
+      label: 'Purple 700'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
