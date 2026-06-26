@@ -28,7 +28,7 @@
  */
 #}
 <!DOCTYPE html>
-<html{{ html_attributes }}>
+<html{{ html_attributes.setAttribute('data-dark-mode', iui_libraries_dark_mode_enabled) }}>
   <head>
     <head-placeholder token="{{ placeholder_token }}">
     <title>{{ head_title|safe_join(' | ')|trim(':', side='left') }}</title>

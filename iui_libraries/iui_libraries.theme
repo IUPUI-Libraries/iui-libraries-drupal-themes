@@ -49,6 +49,8 @@ function iui_libraries_preprocess_html(array &$variables): void {
   $variables['iui_libraries_footer'] = theme_get_setting('iui_libraries_footer');
   $variables['slogan'] = \Drupal::config('system.site')->get('slogan');
   $variables['site_name'] = \Drupal::config('system.site')->get('name');
+  $darkModeEnabled = theme_get_setting('iui_libraries_dark_mode_enabled', 'iui_libraries');
+  $variables['iui_libraries_dark_mode_enabled'] = $darkModeEnabled ? 'enabled' : 'disabled';
 
   $iui_libraries_footer_links = theme_get_setting('iui_libraries_footer_links');
   // Clean up empty rows before passing to Twig
@@ -65,6 +67,7 @@ function iui_libraries_preprocess_html(array &$variables): void {
 function iui_libraries_preprocess_page(array &$variables): void {
   $variables['iui_libraries_page_template'] = theme_get_setting('iui_libraries_page_template');
   $variables['iui_libraries_campus'] = theme_get_setting('iui_libraries_campus');
+  $variables['iui_libraries_dark_mode_enabled'] = theme_get_setting('iui_libraries_dark_mode_enabled');
   $variables['iui_libraries_top_url'] = theme_get_setting('iui_libraries_top_url');
   $variables['iui_libraries_footer'] = theme_get_setting('iui_libraries_footer');
   $variables['slogan'] = \Drupal::config('system.site')->get('slogan');
@@ -195,6 +198,14 @@ function iui_libraries_form_system_theme_settings_alter(&$form, \Drupal\Core\For
     '#default_value' => theme_get_setting('iui_libraries_top_url'),
     '#description'   => t('Enter the URL for the top bar link. Leave blank to use the IU Indianapolis home page.'),
   ];
+
+  $form['iui_libraries_dark_mode_enabled'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Enable Dark Mode Option'),
+    '#default_value' => theme_get_setting('iui_libraries_dark_mode_enabled'),
+    '#description'   => t('Check this box to enable dark mode.'),
+  ];
+
   $form['iui_libraries_primary_menu_search_enabled'] = [
     '#type'          => 'checkbox',
     '#title'         => t('Enable Primary Menu Search Box'),
