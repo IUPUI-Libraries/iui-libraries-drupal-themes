@@ -7,6 +7,7 @@ using [IU Rivet Design System](https://rivet.iu.edu/)
 
 * [Features](#features)
 * [Custom Blocks and Menus](#custom-blocks-and-menus)
+* [Custom Node Types](#custom-node-types)
 * [Configuration](#configurations)
 * [Development](#development)
 
@@ -37,6 +38,10 @@ A dropdown list set a specific campus or no campus for use in both versions of t
 If using hte Alternative Header, the top title link next to the IU Trident can be assigned a custom URL.
 
 ![Top URL](./iui_libraries/images/docs/top_url.png)
+
+### Enable Dark Mode Option
+
+Toggling this option on will allow browser preference and/or javascript to enable dark mode theme.
 
 ### Footer Color
 
@@ -87,6 +92,17 @@ Besides the menu links, an optional search icon and box are avalable. Settings f
 __Example Result__
 
 ![Top navigation menu block](./iui_libraries/images/docs/top_navigation_example.png)
+
+## Custom Node Types
+
+### Section Page
+
+This node type allows for multiple sections to be created. Each section will take full width of browser, but with content limited to usual extra-large container. Order of sections can be changed
+through interface and background / font colors can be set for each section.
+
+Section pages work best with no sidebars.
+
+Section pages rely on custom theming and [Paragraphs Module](https://www.drupal.org/project/paragraphs)
 
 ## Configurations
 
