@@ -87,7 +87,9 @@
 }
 
 
-// When the user has toggled dark mode on, apply these styles.
-html[data-theme="dark"] {
+// When the user has toggled dark mode on,
+// or browser preference is set to dark mode, 
+// and theme enables dark mode, apply these styles.
+html[data-dark-mode="enabled"][data-theme="dark"] {
     @include dark-mode;
 }
