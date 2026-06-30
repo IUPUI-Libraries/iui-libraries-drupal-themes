@@ -1,0 +1,3 @@
+# Ignore the favicon.ico file, which will be a soft link to the actual favicon.ico file in the static directory.
+favicon.ico
+*/favicon.ico
