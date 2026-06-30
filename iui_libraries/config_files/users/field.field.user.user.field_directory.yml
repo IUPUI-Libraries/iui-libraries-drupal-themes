@@ -1,0 +1,24 @@
+uuid: c87d7fe8-08f0-4969-af0f-9c7f30b8638f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_directory
+  module:
+    - user
+id: user.user.field_directory
+field_name: field_directory
+entity_type: user
+bundle: user
+label: Directory
+description: 'Display in Directory?'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

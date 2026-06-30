@@ -1,20 +1,26 @@
-uuid: 5b90134b-9bec-4219-820a-b37dc4fe1787
+uuid: 20563d58-7ee6-47fa-b326-0c38708c2d21
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.user.field_bio
+    - filter.format.full_html
+    - filter.format.source_html
   module:
+    - text
     - user
 id: user.user.field_bio
 field_name: field_bio
 entity_type: user
 bundle: user
-label: Bio
+label: About
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string_long
+settings:
+  allowed_formats:
+    - full_html
+    - source_html
+field_type: text_long

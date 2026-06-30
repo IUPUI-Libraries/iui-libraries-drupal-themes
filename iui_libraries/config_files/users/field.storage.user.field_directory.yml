@@ -1,16 +1,15 @@
-uuid: acca87a5-d039-479a-a926-498e3f895a16
+uuid: a87351f0-3c37-44ca-91c1-08ee758a3752
 langcode: en
 status: true
 dependencies:
   module:
-    - text
     - user
-id: user.field_bio
-field_name: field_bio
+id: user.field_directory
+field_name: field_directory
 entity_type: user
-type: text_long
+type: boolean
 settings: {  }
-module: text
+module: core
 locked: false
 cardinality: 1
 translatable: true
