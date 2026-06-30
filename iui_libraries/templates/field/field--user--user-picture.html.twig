@@ -37,34 +37,19 @@
  */
 #}
 {%
-  set title_classes = [
-    label_display == 'visually_hidden' ? 'visually-hidden',
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display|clean_class,
   ]
 %}
 
-{% if label_hidden %}
-  {% if multiple %}
-    <div{{ attributes }}>
-      {% for item in items %}
-        <div{{ item.attributes }}>{{ item.content }}</div>
-      {% endfor %}
-    </div>
-  {% else %}
+
+<div{{ attributes.addClass(classes) }}>
+  <div class="field__items">
     {% for item in items %}
-      <div{{ attributes }}>{{ item.content }}</div>
+      <img src="{{ item.content }}" alt="User Picture" class="rvt-border-radius-circle rvt-overflow-hidden">
     {% endfor %}
-  {% endif %}
-{% else %}
-  <div{{ attributes }}>
-    <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
-    {% if multiple %}
-      <div>
-    {% endif %}
-    {% for item in items %}
-      <div{{ item.attributes }}>{{ item.content }}</div>
-    {% endfor %}
-    {% if multiple %}
-      </div>
-    {% endif %}
   </div>
-{% endif %}
+</div>

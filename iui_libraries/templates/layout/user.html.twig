@@ -1,0 +1,50 @@
+{#
+/**
+ * @file
+ * Theme override for the user profile page using IU Rivet 2.x.
+ *
+ * Available variables:
+ * - user: The user account entity.
+ * - content: All user content elements. Use {{ content.field_name }} to render specific fields.
+ * - attributes: HTML attributes for the containing element.
+ *
+ * @see template_preprocess_user()
+ */
+#}
+<article{{ attributes.addClass('user-profile rvt-container-lg rvt-m-top-lg') }}>
+
+  <div class="rvt-row rvt-match-height">
+    
+    {# Left Column: Profile Picture #}
+    <div class="rvt-cols-12 rvt-cols-4-md rvt-text-center rvt-text-left-md">
+      {% if content.user_picture %}
+        <div class="user-profile__avatar rvt-inline-block rvt-border-radius-circle rvt-overflow-hidden rvt-shadow-sm" style="width: 220px; height: 220px;">
+          {# Direct render of the picture field #}
+          {{ content.user_picture }}
+        </div>
+      {% endif %}
+    </div>
+
+    {# Right Column: Account Information #}
+    <div class="rvt-cols-12 rvt-cols-8-md">
+      <h3 class="rvt-ts-26 rvt-text-bold rvt-m-bottom-none">{{ content.field_display_name }}</h3>
+      <div class="user-profile__title rvt-ts-16 rvt-m-bottom-xl">{{ content.field_title }}</div>
+      
+      <div class="user-profile__details rvt-flex rvt-flex-column rvt-gap-2">
+        {# Render the rest of your custom fields, excluding the picture #}
+        {{ content|without('user_picture', 'field_display_name', 'field_title', 'field_bio') }}
+      </div>
+    </div>
+
+  </div>
+  <div>
+    {# Optional: Render the bio field if it exists #}
+    {% if content.field_bio %}
+      <div class="user-profile__bio rvt-m-top-xl">
+        <h4 class="rvt-ts-20 rvt-text-bold">{{ content.field_bio['#title'] }}</h4>
+        {{ content.field_bio[0] }}
+      </div>
+    {% endif %}
+  </div>
+
+</article>
