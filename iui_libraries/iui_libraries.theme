@@ -152,7 +152,7 @@ function iui_libraries_preprocess_block(array &$variables): void {
     $menu_name = $variables['elements']['#derivative_plugin_id'] ?? '';
     
     // Add variables to Top navigation menu
-    if ($menu_name === 'top-navigation') {
+    if ($menu_name === 'top-navigation' || $menu_name === 'primary-navigation') {
       $variables['search_enabled'] = theme_get_setting('iui_libraries_primary_menu_search_enabled');
       $variables['search_placeholder'] = theme_get_setting('iui_libraries_primary_menu_search_placeholder');
       $variables['search_action'] = theme_get_setting('iui_libraries_primary_menu_search_action');
