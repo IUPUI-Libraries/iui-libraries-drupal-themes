@@ -82,10 +82,10 @@ A block type for [IU Rivet Cards](https://rivet.iu.edu/components/card/) is avai
 
 Special features are available for a menu that meets the following criteria:
 
-* Is named `Top navigation`
+* Is named `Top Navigation` or `Primary Navigation`
 * Block for this menu is placed in `Primary menu` region
 
-Besides the menu links, an optional search icon and box are avalable. Settings for this search box are in the IU Indianapolis Librariries theme settings. Options include enabling, form action, text field name, and text field placeholder. Leaving action and name fields empty will result in default Drupal search page.
+Besides the menu links, an optional search icon and box are available. Settings for this search box are in the IU Indianapolis Libraries theme settings. Options include enabling, form action, text field name, and text field placeholder. Leaving action and name fields empty will result in default Drupal search page.
 
 ![Top navigation menu block](./iui_libraries/images/docs/top_navigation.png)
 

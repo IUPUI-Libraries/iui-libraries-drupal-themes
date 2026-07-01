@@ -1,0 +1,85 @@
+{#
+/**
+ * @file
+ * Theme override for a menu block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - in_preview: Whether the plugin is being rendered in preview mode.
+ * - content: The content of this block.
+ * - attributes: HTML attributes for the containing element.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: HTML attributes for the title element.
+ * - content_attributes: HTML attributes for the content element.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * Headings should be used on navigation menus that consistently appear on
+ * multiple pages. When this menu block's label is configured to not be
+ * displayed, it is automatically made invisible using the 'visually-hidden' CSS
+ * class, which still keeps it visible for screen-readers and assistive
+ * technology. Headings allow screen-reader and keyboard only users to navigate
+ * to or skip the links.
+ * See http://juicystudio.com/article/screen-readers-display-none.php and
+ * https://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
+ */
+#}
+
+{%
+  set classes = [
+    'rvt-header-global__controls',
+  ]
+%}
+
+<div{{ attributes.addClass(classes) }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    
+    <!-- Navigation -->
+    <div data-rvt-disclosure="menu" data-rvt-close-click-outside>
+    <!-- Menu button that shows/hides navigation on smaller screens -->
+    <button aria-expanded="false" class="rvt-global-toggle rvt-global-toggle--menu rvt-hide-lg-up" data-rvt-disclosure-toggle="menu">
+        <span class="rvt-sr-only">Menu</span>
+        <svg class="rvt-global-toggle__open" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">  <path d="M15 4H1V2h14v2Zm0 5H1V7h14v2ZM1 14h14v-2H1v2Z"/></svg>
+        <svg class="rvt-global-toggle__close" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">  <path d="m3.5 2.086 4.5 4.5 4.5-4.5L13.914 3.5 9.414 8l4.5 4.5-1.414 1.414-4.5-4.5-4.5 4.5L2.086 12.5l4.5-4.5-4.5-4.5L3.5 2.086Z"/></svg>
+    </button>
+    <!-- Navigation links -->
+    <nav aria-label="Main" class="rvt-header-menu" data-rvt-disclosure-target="menu" hidden>
+        {# Menu. #}
+        {% block content %}
+            {{ content }}
+        {% endblock %}
+    </nav>
+    </div>
+    {% if search_enabled %}
+    <!-- Search -->
+    <div data-rvt-disclosure="search" data-rvt-close-click-outside>
+    <!-- Button that shows/hides the search field -->
+    <button class="rvt-global-toggle" data-rvt-disclosure-toggle="search" aria-expanded="false">
+        <span class="rvt-sr-only">Search</span>
+        <svg class="rvt-global-toggle__search" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">  <path d="M7 2a5 5 0 1 0 0 10A5 5 0 0 0 7 2ZM0 7a7 7 0 1 1 12.606 4.192l3.101 3.1-1.414 1.415-3.1-3.1A7 7 0 0 1 0 7Z"/></svg>
+    </button>
+    <!-- Search field -->
+    {# Default action to search form. Should be base url + search path. #}
+    {% set search_path = search_action ?: (path('<front>') ~ 'search/node') %}
+    {% set search_param = search_query_parameter ?: 'keys' %}
+    <form action="{{ search_path }}" class="rvt-header-global__search" data-rvt-disclosure-target="search" role="search" method="get" hidden>
+        <label class="rvt-sr-only" for="search">Search</label>
+        <div class="rvt-input-group">
+        <input title="{{ search_placeholder }}" placeholder="{{ search_placeholder }}" data-drupal-selector="edit-keys" type="search" id="edit-keys" name="{{ search_param }}" value="" maxlength="128" class="rvt-input-group__input rvt-text-input form-search">
+        <div class="rvt-input-group__append">
+            <button class="rvt-button">Search</button>
+        </div>
+        </div>
+    </form>
+    </div>
+    {% endif %}
+</div>
