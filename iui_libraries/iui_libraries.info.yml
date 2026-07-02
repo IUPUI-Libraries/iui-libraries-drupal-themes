@@ -1,6 +1,6 @@
 name: IU Indianapolis Libraries
 type: theme
-base theme: stable9
+base theme: stable9_static
 description: Themes for IU Indianapolis Libraries using IU Rivets CSS/JS framework.
 package: Custom
 core_version_requirement: ^10 || ^11
