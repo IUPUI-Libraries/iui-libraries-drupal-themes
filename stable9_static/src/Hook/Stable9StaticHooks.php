@@ -6,12 +6,12 @@ use Drupal\Component\Utility\NestedArray;
 use Drupal\Core\Hook\Attribute\Hook;
 
 /**
- * Hook implementations for stable9.
+ * Hook implementations for stable9_static.
  */
-class Stable9Hooks {
+class Stable9StaticHooks {
   /**
    * @file
-   * Functions to support theming in the Stable9 theme.
+   * Functions to support theming in the Stable9 Static theme.
    */
 
   /**
