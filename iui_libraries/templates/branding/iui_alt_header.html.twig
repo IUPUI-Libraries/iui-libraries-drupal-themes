@@ -1,3 +1,12 @@
+{% set title = "" %}
+{% set subtitle = "" %}
+{% if iui_libraries_alt_slogan %}
+  {% set title = slogan %}
+  {% set subtitle ="Indiana University " ~ iui_libraries_campus %}
+{% else %}
+  {% set title = "Indiana University " ~ iui_libraries_campus %}
+  {% set subtitle = slogan %}
+{% endif %}
 <header class="rvt-header-wrapper" style="z-index: 300;">
   <!-- Hidden link for keyboard users to skip to main content -->
   <a class="rvt-header-wrapper__skip-link" href="#main-content">Skip to main content</a>
@@ -14,13 +23,15 @@
             </div>
             <!-- Website or application title -->
             <div class="rvt-lockup__body">
-              {% if iui_libraries_campus != 'none' %}
+              {# {% if iui_libraries_campus != 'none' %}
               <span class="rvt-lockup__title">Indiana University  {{ iui_libraries_campus }}</span>
               <span class="rvt-lockup__subtitle">{{ slogan }}</span>
               {% else %}
               <span class="rvt-lockup__title">Indiana University</span>
               <span class="rvt-lockup__subtitle">{{ slogan }}</span>
-              {% endif %}
+              {% endif %} #}
+              <span class="rvt-lockup__title">{{ title }}</span>
+              <span class="rvt-lockup__subtitle">{{ subtitle }}</span>
             </div>
           </a>
         </div>
