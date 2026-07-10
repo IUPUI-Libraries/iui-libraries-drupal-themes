@@ -39,6 +39,11 @@ If using hte Alternative Header, the top title link next to the IU Trident can b
 
 ![Top URL](./iui_libraries/images/docs/top_url.png)
 
+### Place Slogan over Campus (Alternative page template only)
+
+For use when you need to place a school or department over its campus. 
+Alternative Top URL still applies.
+
 ### Enable Dark Mode Option
 
 Toggling this option on will allow browser preference and/or javascript to enable dark mode theme.

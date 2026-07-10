@@ -67,6 +67,7 @@ function iui_libraries_preprocess_html(array &$variables): void {
 function iui_libraries_preprocess_page(array &$variables): void {
   $variables['iui_libraries_page_template'] = theme_get_setting('iui_libraries_page_template');
   $variables['iui_libraries_campus'] = theme_get_setting('iui_libraries_campus');
+  $variables['iui_libraries_alt_slogan'] = theme_get_setting('iui_libraries_alt_slogan');
   $variables['iui_libraries_dark_mode_enabled'] = theme_get_setting('iui_libraries_dark_mode_enabled');
   $variables['iui_libraries_top_url'] = theme_get_setting('iui_libraries_top_url');
   $variables['iui_libraries_footer'] = theme_get_setting('iui_libraries_footer');
@@ -197,6 +198,13 @@ function iui_libraries_form_system_theme_settings_alter(&$form, \Drupal\Core\For
     '#title'         => t('Top URL (Alternate page template only)'),
     '#default_value' => theme_get_setting('iui_libraries_top_url'),
     '#description'   => t('Enter the URL for the top bar link. Leave blank to use the IU Indianapolis home page.'),
+  ];
+
+  $form['iui_libraries_alt_slogan'] = [
+    '#type'          => 'checkbox',
+    '#title'         => t('Place Slogan over Campus (Alternate page template only)'),
+    '#default_value' => theme_get_setting('iui_libraries_alt_slogan'),
+    '#description'   => t('Default is for campus to be placed over the slogan. Check this box to place the slogan over the campus.'),
   ];
 
   $form['iui_libraries_dark_mode_enabled'] = [
