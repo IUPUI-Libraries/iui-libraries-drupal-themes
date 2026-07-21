@@ -26,22 +26,31 @@
 #}
 {{ menus.menu_links(items, attributes, 0) }}
 
-{% macro menu_links(items, attributes, menu_level) %}
+{% macro menu_links(items, attributes, menu_level, active = false) %}
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
       {% set attributes = attributes.addClass('rvt-sidenav__list') %}
       <ul{{ attributes }}>
     {% else %}
-      <ul class="rvt-sidenav__list">
+      <ul class="rvt-sidenav__list" data-rvt-sidenav-list {% if active %}hidden="false"{% endif %}>
     {% endif %}
     {% for item in items %}
+      {% set active = item.in_active_trail %}
       {% set item_attributes = item.attributes %}
       {% set item_attributes = item_attributes.addClass('rvt-sidenav__item') %}
       <li{{ item.attributes }}>
-        {{ link(item.title, item.url, { 'class': ['rvt-sidenav__link']}) }}
         {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+          <div class="rvt-sidenav__item-wrapper">
+            {{ link(item.title, item.url, { 'class': ['rvt-sidenav__link']}) }}
+            <button class="rvt-sidenav__toggle" data-rvt-sidenav-toggle {% if active %}aria-expanded="true"{% endif %}>
+              <span class="rvt-sr-only">Show more level two links</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">  <path d="m15.146 6.263-1.292-1.526L8 9.69 2.146 4.737.854 6.263 8 12.31l7.146-6.047Z"/></svg>
+            </button>
+          </div>
+          {{ menus.menu_links(item.below, attributes, menu_level + 1, active) }}
+        {% else %}
+          {{ link(item.title, item.url, { 'class': ['rvt-sidenav__link']}) }}
         {% endif %}
       </li>
     {% endfor %}
