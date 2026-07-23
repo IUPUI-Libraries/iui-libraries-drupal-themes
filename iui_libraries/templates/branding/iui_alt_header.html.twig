@@ -1,5 +1,9 @@
 {% set title = "" %}
 {% set subtitle = "" %}
+{# If iui_libraries_campus is 'none', reset to an empty string #}
+{% if iui_libraries_campus == 'none' %}
+  {% set iui_libraries_campus = '' %}
+{% endif %}
 {% if iui_libraries_alt_slogan %}
   {% set title = slogan %}
   {% set subtitle ="Indiana University " ~ iui_libraries_campus %}
