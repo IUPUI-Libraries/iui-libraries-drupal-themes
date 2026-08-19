@@ -64,6 +64,17 @@
         background-color: utils.$dark-mode-background;
     }
 
+    .rvt-cta--button {
+      color: #900;
+      background-color: #900;
+      border-color: #900;
+    }
+    .rvt-cta--button:hover {
+      color: #900;
+      background-color: #900;
+      border-color: #fff;
+    }
+
     .rvt-footer-base {
         color: utils.$cream;
         background-color: utils.$dark-mode-background;
