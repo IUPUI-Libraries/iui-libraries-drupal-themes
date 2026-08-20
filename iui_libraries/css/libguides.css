@@ -44,6 +44,16 @@ html[data-dark-mode=enabled][data-theme=dark] .rvt-sidenav__label {
 html[data-dark-mode=enabled][data-theme=dark] .rvt-sidenav__link[aria-current=page] {
   background-color: #212121;
 }
+html[data-dark-mode=enabled][data-theme=dark] .rvt-cta--button {
+  color: #900;
+  background-color: #900;
+  border-color: #900;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-cta--button:hover {
+  color: #900;
+  background-color: #900;
+  border-color: #fff;
+}
 html[data-dark-mode=enabled][data-theme=dark] .rvt-footer-base {
   color: #ffffff;
   background-color: #212121;
