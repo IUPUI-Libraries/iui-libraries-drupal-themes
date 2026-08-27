@@ -71,6 +71,23 @@ html[data-dark-mode=enabled][data-theme=dark] .rvt-sidenav__label {
 html[data-dark-mode=enabled][data-theme=dark] .rvt-sidenav__link[aria-current=page] {
   background-color: #212121;
 }
+html[data-dark-mode=enabled][data-theme=dark] .rvt-subnav__item {
+  margin: 0;
+  flex-shrink: 0;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-subnav__item a:not(.toolbar-icon) {
+  color: #ffffff;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-subnav__item a:not(.toolbar-icon):hover {
+  color: #900;
+  text-decoration: none;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-subnav__item a:not(.toolbar-icon).is-active[aria-current=page] {
+  color: #900;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-subnav__item a:not(.toolbar-icon):hover:not([aria-current=page])::after {
+  background-color: #900;
+}
 html[data-dark-mode=enabled][data-theme=dark] .rvt-cta--button {
   color: #900;
   background-color: #900;
@@ -80,6 +97,9 @@ html[data-dark-mode=enabled][data-theme=dark] .rvt-cta--button:hover {
   color: #900;
   background-color: #900;
   border-color: #fff;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-cta--button::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" fill="%23fff" viewBox="0 0 16 16"><path d="M1 7h10.844L7.737 2.146 9.263.854 15.31 8l-6.047 7.146-1.526-1.292L11.844 9H1V7Z"></path></svg>');
 }
 html[data-dark-mode=enabled][data-theme=dark] .rvt-footer-base {
   color: #ffffff;
