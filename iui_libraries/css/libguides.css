@@ -84,4 +84,44 @@ a:visited, a:visited:hover {
   text-decoration: inherit;
 }
 
+/* Header styles for Libguide in the IUI Libraries theme. */
+@media screen and (min-width: 1080px) {
+  .rvt-header-menu[data-rvt-disclosure-target=local-header-menu] {
+    display: flex !important;
+  }
+  .rvt-dropdown__menu--left {
+    left: 0;
+  }
+}
+@media screen and (max-width: 1079px) {
+  .rvt-header-menu[data-rvt-disclosure-target=local-header-menu]:not([hidden]),
+  .rvt-header-menu[data-rvt-disclosure-target=local-header-menu][aria-expanded=true] {
+    display: block !important;
+  }
+  .rvt-header-menu[data-rvt-disclosure-target=local-header-menu][hidden] {
+    display: none !important;
+  }
+  /* Target the Rivets header menu specifically when expanded/visible */
+  .rvt-header-menu[data-rvt-disclosure-target=local-header-menu]:not([hidden]) {
+    /* 1. Pull the element back into normal document layout flow */
+    position: relative !important;
+    /* 2. Clear out Rivets' absolute positioning offsets */
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    /* 3. Ensure full width and clear float bounds */
+    width: 100% !important;
+    clear: both !important;
+    box-sizing: border-box !important;
+  }
+  /* Ensure the header container itself permits height expansion */
+  .rvt-header,
+  header {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
 /*# sourceMappingURL=libguides.css.map */
