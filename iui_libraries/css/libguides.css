@@ -104,4 +104,10 @@ html[data-dark-mode=enabled][data-theme=dark] .iui-page-summary {
   color: #fff;
 }
 
+/* Libguide Override styles for the IUI Libraries theme. */
+a:visited, a:visited:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 /*# sourceMappingURL=libguides.css.map */
