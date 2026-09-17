@@ -1,5 +1,10 @@
 /* Libguide Override styles for the IUI Libraries theme. */
 
+// Added for Lockup Title
+a.rvt-lockup:hover {
+    text-decoration: none;
+}
+
 a:visited, a:visited:hover {
     color: inherit;
     text-decoration: inherit;
