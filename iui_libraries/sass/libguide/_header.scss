@@ -47,3 +47,8 @@
         overflow: visible !important;
     }
 }
+
+/* Prevent Search button from being on top of expanded menus. */
+.iui-z-index_3 {
+    z-index: 3;
+}
