@@ -1,87 +1,81 @@
 /**
  * JS File for UL Springshare Theme
  * Needs to reside at https://library.indianapolis.iu.edu/themes/custom/iui_libraries/js/iui-libguides.js
+ * or https://demo.library.indianapolis.iu.edu/themes/custom/iui_libraries/js/iui-libguides.js
  */
 
-// Set today's hours in header
-$(document).ready(function() {
-  // Set Today's Hours
-//   var hours_url = 'https://iu.libcal.com/api_hours_today.php?iid=4073&lid=6922&format=json&systemTime=0&callback=?';
-//   $.getJSON(hours_url, function (json){
-//     var status = json['locations'][0]['times']['status'];
-//     if(status == 'open'){
-//       var from = json['locations'][0]['times']['hours'][0]['from'];
-//       var to = json['locations'][0]['times']['hours'][0]['to']
-//       $('#hours_today').text(from + ' - ' + to);
-//     }else{
-//       var display = status[0].toUpperCase() + status.substring(1);
-//       $('#hours_today').text(display);
-//     }
-//   });
-//   // Other Libraries click
-//   $("#other-libraries-link").click(function(){
-//     if($(this).hasClass("open")){
-//       $(this).removeClass("open");
-//     }else{
-//       $(this).addClass('open');
-//     }
-//     $('#other-libraries-drop').toggle();
-//     return false;
-//   });
+// Javascript for LibGuides
 
-  const darkModePreference = window.matchMedia("(prefers-color-scheme: dark)");
-
-  // Set Color mode toggle switch
-  mode = getCookie('color-mode');
-  if(mode === 'light') {
-    toggleDarkModeSwitch(mode);
-  } else if(mode === 'dark' || window.matchMedia("(prefers-color-scheme: dark)").matches){
-    toggleDarkModeSwitch(mode);
-  } else {
-    toggleDarkModeSwitch('light');
-  }
-
-  // Add color preference change listener  
-  darkModePreference.addEventListener("change", (e) => {
-    const newColorScheme = e.matches ? "dark" : "light";
-    if(newColorScheme === 'dark'){
-      enableDarkMode();
-    }else if(newColorScheme === 'light'){
-      disableDarkMode();
+// After page load, add a class to the HTML element for light or dark mode, based on the user's system preference.
+document.addEventListener('DOMContentLoaded', function() {
+    document.documentElement.setAttribute('data-dark-mode', 'enabled');
+    // Check for color cookie
+    const colorCookie = getCookie('color-mode');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (colorCookie) {
+        document.documentElement.setAttribute('data-theme', colorCookie);
+        setColorModeSwitch(colorCookie); // Update the color mode switch based on the cookie value.
+    } else if (prefersDarkScheme) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        setColorModeSwitch('dark');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        setColorModeSwitch('light');
     }
-  });
+});
+
+// Add an event listener to a button to toggle dark mode when clicked
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('color-mode-switch');
+    if (toggleButton) {
+        toggleButton.addEventListener('click', toggleDarkMode);
+    }
 });
 
 /**
- * Dark Mode Toggle
+ * Toggles the application theme between light and dark modes.
+ * Updates the 'data-theme' attribute on the document element and syncs the switch UI.
  */
-function enableDarkMode(mode = 'dark'){
-  var html_tag = document.getElementsByTagName('html')[0];
-  html_tag.classList.remove('light_mode');
-  html_tag.classList.add('dark_mode');
-  setCookie("color-mode", mode);
-  toggleDarkModeSwitch(mode);
-}
-function disableDarkMode(mode = 'light'){
-  var html_tag = document.getElementsByTagName('html')[0];
-  html_tag.classList.remove('dark_mode');
-  html_tag.classList.add('light_mode');
-  setCookie("color-mode", mode);
-  toggleDarkModeSwitch(mode);
+function toggleDarkMode() {
+    const htmlElement = document.documentElement;
+    if (htmlElement.getAttribute('data-theme') === 'dark') {
+        htmlElement.setAttribute('data-theme', 'light');
+        setColorModeSwitch('light');
+        setCookie('color-mode', 'light'); // Set cookie to remember user's preference
+    } else {
+        htmlElement.setAttribute('data-theme', 'dark');
+        setColorModeSwitch('dark');
+        setCookie('color-mode', 'dark'); // Set cookie to remember user's preference
+    }
 }
 
-function toggleDarkModeSwitch(mode){
-  if(mode == 'dark'){
-    document.getElementById('dark-mode-on-btn').classList.add('btn-red');
-    document.getElementById('dark-mode-off-btn').classList.remove('btn-red');
-  }else{
-    document.getElementById('dark-mode-off-btn').classList.add('btn-red');
-    document.getElementById('dark-mode-on-btn').classList.remove('btn-red');
-  }
+/**
+ * Sets the visual and accessibility state of the color mode switch based on the provided mode.
+ *
+ * @param {string} mode - The color mode to set ('dark' or 'light').
+ */
+function setColorModeSwitch(mode) {
+    const colorButtonSwitch = document.querySelector('#color-mode-switch');
+    const colorModeOffSpan = document.querySelector('#color-mode-switch > span.rvt-switch__off');
+    const colorModeOnSpan = document.querySelector('#color-mode-switch > span.rvt-switch__on');
+    if (mode === 'dark') {
+        colorButtonSwitch.setAttribute('aria-checked', 'true');
+        colorModeOffSpan.setAttribute('aria-hidden', 'true');
+        colorModeOnSpan.setAttribute('aria-hidden', 'false');
+    } else {
+        colorButtonSwitch.setAttribute('aria-checked', 'false');
+        colorModeOffSpan.setAttribute('aria-hidden', 'false');
+        colorModeOnSpan.setAttribute('aria-hidden', 'true');
+    }
 }
 
-/*
- * Cookie Functions
+/**
+ * Sets a cookie with the given name and value. 
+ * Optionally, specify the number of days until the cookie expires.
+ * 
+ * @param {*} cname 
+ * @param {*} cvalue 
+ * @param {*} exdays 
  */
 function setCookie(cname, cvalue, exdays=1) {
   const d = new Date();
@@ -90,6 +84,12 @@ function setCookie(cname, cvalue, exdays=1) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+/**
+ * Gets the value of a cookie by its name. 
+ * 
+ * @param {*} cname 
+ * @returns 
+ */
 function getCookie(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(';');

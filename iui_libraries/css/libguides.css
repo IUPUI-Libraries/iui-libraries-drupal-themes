@@ -128,4 +128,35 @@ a:visited, a:visited:hover {
   z-index: 3;
 }
 
+/* Dark Modes Styles for LibGuides */
+html[data-dark-mode=enabled][data-theme=dark] {
+  /* LibGuides overrides for dark mode */
+  /* Rivet overrides for dark mode */
+}
+html[data-dark-mode=enabled][data-theme=dark] .s-lib-header h1 {
+  color: #ffffff;
+}
+html[data-dark-mode=enabled][data-theme=dark] .s-lib-box {
+  background-color: #3b3b3b;
+}
+html[data-dark-mode=enabled][data-theme=dark] .s-lib-footer {
+  background-color: #212121;
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lib-footer-login-link a {
+  color: #d1d1d1;
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-index-list .accordion-button {
+  background-color: #eeeeee;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-footer-base--light .rvt-footer-base__inner {
+  border: none;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-header-global a {
+  text-decoration: none;
+}
+html[data-dark-mode=enabled][data-theme=dark] .rvt-header-global a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 /*# sourceMappingURL=libguides.css.map */
