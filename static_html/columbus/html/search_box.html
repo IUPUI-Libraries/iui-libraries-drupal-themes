@@ -1,0 +1,141 @@
+<div class="rvt-p-all-xl rvt-container-xl">
+    <form id="search-form">
+        <label for="search" class="rvt-label rvt-ts-xl-lg-up rvt-ts-lg-md-up rvt-ts-md-sm-up rvt-weight-bold rvt-m-bottom-sm">
+            What would you like to find at the library today?
+        </label>
+        <div class="rvt-input-group rvt-input-group--stacked-sm">
+            <div class="rvt-input-group__prepend">
+                <div class="rvt-dropdown" data-rvt-dropdown>
+                    <button type="button" 
+                            class="rvt-button rvt-dropdown-toggle--responsive rvt-flex rvt-flex-justify-space-between rvt-flex-items-center rvt-text-left" 
+                            data-rvt-dropdown-toggle>
+                        <div class="rvt-flex rvt-items-center rvt-m-left-xxs">    
+                            <span id="search-box-label">
+                                Articles, Books, Research <br>
+                                <span id="search-box-sub-label" class="rvt-ts-xxs rvt-color-black-100">
+                                    OneSearch@IU
+                                </span>
+                            </span>
+                        </div>
+                        <div class="rvt-flex rvt-items-center rvt-grow-1 rvt-justify-end rvt-m-left-xs">
+                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                                <path fill="currentColor" d="M8,12.46a2,2,0,0,1-1.52-.7L1.24,5.65a1,1,0,1,1,1.52-1.3L8,10.46l5.24-6.11a1,1,0,0,1,1.52,1.3L9.52,11.76A2,2,0,0,1,8,12.46Z"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="rvt-dropdown__menu" data-rvt-dropdown-menu data-search-options hidden>
+                        <button type="button" role="menuitemradio" aria-checked="true">Articles, Books, Research <br> <span class="rvt-ts-xxs rvt-color-black-400">OneSearch@IU</span></button>
+                        <button type="button" role="menuitemradio" aria-checked="false">Journals <br> <span class="rvt-ts-xxs rvt-color-black-400">Print and Electronic</span></button>
+                        <button type="button" role="menuitemradio" aria-checked="false">Library Collections, Books & More <br> <span class="rvt-ts-xxs rvt-color-black-400">IUCAT (Library Catalog)</span></button>
+                    </div>
+                </div>
+            </div>
+            <input class="rvt-text-input rvt-input-group__input" type="text" id="search" placeholder="Search for articles, books, and more...">
+            <div class="rvt-input-group__append">
+                <button id="search-go-button" type="submit" class="rvt-button"><span>Go</span></button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    /* Dropdown takes full width on narrow screens */
+    .rvt-dropdown-toggle--responsive {
+        width: 100%;
+    }
+
+    /* On medium viewports and up (e.g., >= 740px / 46.25em), enforce 325px width */
+    @media screen and (min-width: 46.25em) {
+        .rvt-dropdown-toggle--responsive {
+            width: 325px;
+        }
+    }
+
+    /* Stack input group elements vertically on small screens */
+    @media screen and (max-width: 46.24em) {
+        .rvt-input-group--stacked-sm {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        
+        .rvt-input-group--stacked-sm .rvt-input-group__prepend,
+        .rvt-input-group--stacked-sm .rvt-dropdown,
+        .rvt-input-group--stacked-sm .rvt-input-group__input,
+        .rvt-input-group--stacked-sm .rvt-input-group__append {
+            width: 100%;
+        }
+
+        /* Adjust border radii so stacked elements feel cohesive */
+        .rvt-input-group--stacked-sm .rvt-button,
+        .rvt-input-group--stacked-sm .rvt-input-group__input {
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+    }
+</style>
+
+<script>
+    // Get the search form element
+    const searchForm = document.getElementById('search-form');
+
+    /*
+     * Handle search option selection
+     */
+    document.querySelectorAll('[data-search-options] button').forEach(button => {
+        button.addEventListener('click', function() {
+            // Get the new search label from the clicked button
+            let newSearchLabel = this.innerHTML;
+
+            // Replace subtitle class to make it lighter when selected
+            newSearchLabel = newSearchLabel.replace('rvt-ts-xxs rvt-color-black-400', 'rvt-ts-xxs rvt-color-black-100');
+            document.getElementById('search-box-label').innerHTML = newSearchLabel;
+
+            // Remove aria-checked from all buttons and set it to true for the clicked button
+            document.querySelectorAll('[data-search-options] button').forEach(btn => btn.setAttribute('aria-checked', 'false'));
+            this.setAttribute('aria-checked', 'true');
+
+            // Update placeholder text based on selected search option
+            const searchInput = document.getElementById('search');
+            if (newSearchLabel.includes('Articles, Books, Research')) {
+                searchInput.placeholder = "Search for articles, books, and more...";
+            } else if (newSearchLabel.includes('Journals')) {
+                searchInput.placeholder = "Search for journals...";
+            } else if (newSearchLabel.includes('Library Collections')) {
+                searchInput.placeholder = "Search for library collections, books, and more...";
+            }
+        });
+    });
+
+    /*
+     * Handle form submission
+     */
+    searchForm.addEventListener('submit', function(event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Get the search input value and the selected search option
+        const searchInput = document.getElementById('search').value;
+        const searchOption = document.getElementById('search-box-label').innerText.split('\n')[0];
+
+        // Initialize searchUrl variable
+        let searchUrl = '';
+
+        // Determine the search URL based on the selected search option
+        if (searchOption.includes('Articles, Books, Research')) {
+            searchUrl  = 'https://research.ebsco.com/c/jpbqsr/search/results?limiters=&q=';
+            searchUrl += encodeURIComponent(searchInput);
+            searchUrl += '&type=0&skipResultsFetch=true';
+        } else if (searchOption.includes('Journals')) {
+            searchUrl  = 'https://iucat.iu.edu/iuc?advanced_query=yes&omit_keys%5B%5D=page&online_only=yes&f_inclusive%5Bformat_adv%5D%5B%5D=Journal%2C+Periodical&q_row%5B%5D=';
+            searchUrl += encodeURIComponent(searchInput);
+            searchUrl += '&op_row%5B%5D=AND&search_field_row%5B%5D=all_fields&boolean_row%5B1%5D=AND&q_row%5B%5D=&op_row%5B%5D=AND&search_field_row%5B%5D=all_fields&range%5Bpub_date_sort%5D%5Bbegin%5D=&range%5Bpub_date_sort%5D%5Bend%5D=&sort=score+desc%2C+pub_date_sort+desc%2C+title_sort+asc&search_field=advanced';
+            searchUrl += encodeURIComponent(searchInput);
+        } else if (searchOption.includes('Library Collections, Books & More')) {
+            searchUrl  = 'https://iucat.iu.edu/iuc?utf8=%E2%9C%93&search_field=all_field&q=';
+            searchUrl += encodeURIComponent(searchInput);
+        }
+
+        // Open in a new tab
+        window.open(searchUrl, '_blank');
+    });
+</script>
