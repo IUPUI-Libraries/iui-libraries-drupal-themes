@@ -55,7 +55,15 @@
           <div class="rvt-header-menu__dropdown rvt-dropdown" data-rvt-dropdown="primary-nav-1">
             <div class="rvt-header-menu__group">
               <!-- Link that appears in header -->
-              <a class="rvt-header-menu__link" href="{{ item.url }}">{{ item.title }}</a>
+              {% set is_button = item.url.routed and item.url.routeName == '<button>' %}
+              {% set is_nolink = item.url.routed and item.url.routeName == '<nolink>' %}
+              {% if is_button %}
+                <button class="rvt-header-menu__link rvt-button rvt-button--small iui-main-nav-button" type="button">{{ item.title }}</button>
+              {% elseif is_nolink %}
+                <span class="rvt-header-menu__link">{{ item.title }}</span>
+              {% else %}
+                <a class="rvt-header-menu__link" href="{{ item.url }}">{{ item.title }}</a>
+              {% endif %}
               <!-- Button that shows/hides dropdown links -->
               <button aria-expanded="false" class="rvt-dropdown__toggle rvt-header-menu__toggle" data-rvt-dropdown-toggle="primary-nav-1">
                 <span class="rvt-sr-only">More sub-navigation links</span>
