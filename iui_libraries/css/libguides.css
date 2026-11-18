@@ -128,4 +128,149 @@ a:visited, a:visited:hover {
   z-index: 3;
 }
 
+/* Dark mode color palette */
+:root {
+  --lg-dm-bg-base: #1A1A1A;
+  --lg-dm-bg-surface: #262626;
+  --lg-dm-bg-surface-alt: #2A2A2A;
+  --lg-dm-bg-nav: #2C2C2C;
+  --lg-dm-bg-elevated: #2E2E2E;
+  --lg-dm-bg-subnav: #333333;
+  --lg-dm-bg-btn: #3A3A3A;
+  --lg-dm-bg-badge: #555555;
+  --lg-dm-bg-accent: #990000;
+  --lg-dm-bg-info: #16343B;
+  --lg-dm-border-subtle: #3D3D3D;
+  --lg-dm-border-input: #555555;
+  --lg-dm-text-bright: #FFFFFF;
+  --lg-dm-text-primary: #F2F2F2;
+  --lg-dm-text-secondary: #E0E0E0;
+  --lg-dm-text-muted: #D6D6D6;
+  --lg-dm-text-subtle: #BDBDBD;
+  --lg-dm-text-link: #7CC4F0;
+  --lg-dm-text-info: #9EE6F5;
+}
+
+html[data-dark-mode=enabled][data-theme=dark] {
+  /* New Styles for Dark Mode */
+  /* Navigation & Pills */
+  /* Form Inputs & Controls */
+  /* Buttons & Badges */
+  /* Headers & Alerts */
+  /* Accordions & Split Nav */
+  /* Content Boxes & Typography */
+  /* Footer */
+}
+html[data-dark-mode=enabled][data-theme=dark] div.s-lib-color-lt-grey a {
+  color: #006298;
+}
+html[data-dark-mode=enabled][data-theme=dark] div.s-lib-color-lt-grey a:hover {
+  color: #006298;
+  text-decoration: none;
+}
+html[data-dark-mode=enabled][data-theme=dark] .alert-info {
+  background-color: #999999;
+}
+html[data-dark-mode=enabled][data-theme=dark] .popover {
+  background-color: #999999;
+}
+html[data-dark-mode=enabled][data-theme=dark] div.popover-arrow::after {
+  border-right-color: #999999;
+}
+html[data-dark-mode=enabled][data-theme=dark] .popover-header {
+  background-color: #666666;
+}
+html[data-dark-mode=enabled][data-theme=dark] .accordion-button:focus {
+  box-shadow: none;
+}
+html[data-dark-mode=enabled][data-theme=dark] .s-lg-tabs-side .s-lg-boxnav .list-group-item {
+  background-color: #000000;
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-tabs-container .nav-pills > li > a {
+  background-color: #000000;
+  border: 1px solid var(--lg-dm-text-bright);
+  color: var(--lg-dm-text-bright);
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-guide-header-info h1, html[data-dark-mode=enabled][data-theme=dark] .s-lib-header h1 {
+  color: var(--lg-dm-text-bright);
+}
+html[data-dark-mode=enabled][data-theme=dark] a:not(.toolbar-icon) {
+  color: #74b9f5;
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-hp-nav {
+  background-color: var(--lg-dm-bg-nav);
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-hp-nav .nav-pills .btn {
+  color: var(--lg-dm-text-muted);
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-hp-nav .nav-pills li.active .btn {
+  background-color: var(--lg-dm-bg-accent);
+  color: var(--lg-dm-text-bright);
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-hp-nav-bottom {
+  background-color: var(--lg-dm-bg-subnav);
+  color: var(--lg-dm-text-secondary);
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-guide-search,
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-guide-order,
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-guide-search-terms {
+  background-color: var(--lg-dm-bg-base);
+  border-color: var(--lg-dm-border-input);
+  color: var(--lg-dm-text-primary);
+}
+html[data-dark-mode=enabled][data-theme=dark] .btn.btn-light.border {
+  background-color: var(--lg-dm-bg-btn);
+  border-color: var(--lg-dm-border-input);
+  color: var(--lg-dm-text-primary);
+}
+html[data-dark-mode=enabled][data-theme=dark] .btn-outline-secondary {
+  color: var(--lg-dm-text-muted);
+}
+html[data-dark-mode=enabled][data-theme=dark] .badge.pull-right {
+  background-color: var(--lg-dm-bg-badge);
+  color: var(--lg-dm-text-bright);
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lg-index-list-header {
+  color: var(--lg-dm-text-subtle);
+}
+html[data-dark-mode=enabled][data-theme=dark] .alert.alert-info {
+  background-color: var(--lg-dm-bg-info);
+  color: var(--lg-dm-text-info);
+}
+html[data-dark-mode=enabled][data-theme=dark] .accordion-button {
+  background-color: var(--lg-dm-bg-elevated);
+  color: var(--lg-dm-text-primary);
+}
+html[data-dark-mode=enabled][data-theme=dark] .accordion-item {
+  background-color: var(--lg-dm-bg-surface);
+  border-color: var(--lg-dm-border-subtle);
+}
+html[data-dark-mode=enabled][data-theme=dark] .split-button-nav .nav-link {
+  background-color: var(--lg-dm-bg-elevated);
+  color: var(--lg-dm-text-secondary);
+}
+html[data-dark-mode=enabled][data-theme=dark] .split-button-nav .list-group-item {
+  background-color: var(--lg-dm-bg-surface-alt);
+}
+html[data-dark-mode=enabled][data-theme=dark] .s-lib-box-title {
+  background-image: none;
+  background-color: transparent; /* Ensures old gradient fallbacks don't linger */
+  color: var(--lg-dm-text-bright);
+}
+html[data-dark-mode=enabled][data-theme=dark] .s-lib-box {
+  background-color: var(--lg-dm-bg-surface);
+  border-color: var(--lg-dm-border-subtle);
+}
+html[data-dark-mode=enabled][data-theme=dark] .s-lib-box.s-lib-box-std {
+  background-color: var(--lg-dm-bg-surface);
+  color: var(--lg-dm-text-primary);
+}
+html[data-dark-mode=enabled][data-theme=dark] .s-lib-box-content a {
+  color: var(--lg-dm-text-link);
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lib-footer-public {
+  background-color: var(--lg-dm-bg-base);
+  color: var(--lg-dm-text-muted);
+}
+
 /*# sourceMappingURL=libguides.css.map */
