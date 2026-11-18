@@ -1,0 +1,218 @@
+// Dark Modes styles for LibGuides
+
+/* Dark mode color palette */
+:root {
+  --lg-dm-bg-base: #1A1A1A;
+  --lg-dm-bg-surface: #262626;
+  --lg-dm-bg-surface-alt: #2A2A2A;
+  --lg-dm-bg-nav: #2C2C2C;
+  --lg-dm-bg-elevated: #2E2E2E;
+  --lg-dm-bg-subnav: #333333;
+  --lg-dm-bg-btn: #3A3A3A;
+  --lg-dm-bg-badge: #555555;
+  --lg-dm-bg-accent: #990000;
+  --lg-dm-bg-info: #16343B;
+
+  --lg-dm-border-subtle: #3D3D3D;
+  --lg-dm-border-input: #555555;
+
+  --lg-dm-text-bright: #FFFFFF;
+  --lg-dm-text-primary: #F2F2F2;
+  --lg-dm-text-secondary: #E0E0E0;
+  --lg-dm-text-muted: #D6D6D6;
+  --lg-dm-text-subtle: #BDBDBD;
+  --lg-dm-text-link: #7CC4F0;
+  --lg-dm-text-info: #9EE6F5;
+}
+
+// Mixin to apply dark mode styles
+@mixin dark-mode {
+
+    .s-lib-header h1{
+        color: #ffffff;
+    }
+
+    .s-lib-box {
+        background-color: #3b3b3b;
+    }
+
+    .s-lib-footer {
+        background-color: #212121;
+    }
+
+    #s-lib-footer-login-link a {
+        color: #d1d1d1
+    }
+
+    #s-lg-index-list .accordion-button {
+        background-color: #eeeeee;
+    }
+
+    /* Rivet overrides for dark mode */
+    .rvt-footer-base--light .rvt-footer-base__inner {
+        border: none;
+    }
+
+    .rvt-header-global a {
+        text-decoration: none;
+    }
+
+    .rvt-header-global a:hover {
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    div.s-lib-color-lt-grey a{
+        color: #006298;
+    }
+
+    div.s-lib-color-lt-grey a:hover{
+        color: #006298;
+        text-decoration: none;
+    }
+
+    .alert-info {
+        background-color: #999999;
+    }
+
+    .popover{
+        background-color: #999999;
+    }
+
+    div.popover-arrow::after {
+        border-right-color: #999999;
+    }
+
+    .popover-header{
+        background-color: #666666;
+    }
+
+    .accordion-button:focus {
+        box-shadow: none;
+    }
+
+    /* New Styles for Dark Mode */
+    .s-lg-tabs-side .s-lg-boxnav .list-group-item {
+        background-color: #000000;
+    }
+
+    #s-lg-tabs-container .nav-pills > li > a {
+        background-color: #000000;
+        border: 1px solid var(--lg-dm-text-bright);
+        color: var(--lg-dm-text-bright);
+    }
+
+    #s-lg-guide-header-info h1, .s-lib-header h1 {
+        color: var(--lg-dm-text-bright);
+    }
+
+    a:not(.toolbar-icon) {
+        color: #74b9f5;
+    }
+
+  /* Navigation & Pills */
+  #s-lg-hp-nav {
+    background-color: var(--lg-dm-bg-nav);
+  }
+
+  #s-lg-hp-nav .nav-pills .btn {
+    color: var(--lg-dm-text-muted);
+  }
+
+  #s-lg-hp-nav .nav-pills li.active .btn {
+    background-color: var(--lg-dm-bg-accent);
+    color: var(--lg-dm-text-bright);
+  }
+
+  #s-lg-hp-nav-bottom {
+    background-color: var(--lg-dm-bg-subnav);
+    color: var(--lg-dm-text-secondary);
+  }
+
+  /* Form Inputs & Controls */
+  #s-lg-guide-search,
+  #s-lg-guide-order,
+  #s-lg-guide-search-terms {
+    background-color: var(--lg-dm-bg-base);
+    border-color: var(--lg-dm-border-input);
+    color: var(--lg-dm-text-primary);
+  }
+
+  /* Buttons & Badges */
+  .btn.btn-light.border {
+    background-color: var(--lg-dm-bg-btn);
+    border-color: var(--lg-dm-border-input);
+    color: var(--lg-dm-text-primary);
+  }
+
+  .btn-outline-secondary {
+    color: var(--lg-dm-text-muted);
+  }
+
+  .badge.pull-right {
+    background-color: var(--lg-dm-bg-badge);
+    color: var(--lg-dm-text-bright);
+  }
+
+  /* Headers & Alerts */
+  #s-lg-index-list-header {
+    color: var(--lg-dm-text-subtle);
+  }
+
+  .alert.alert-info {
+    background-color: var(--lg-dm-bg-info);
+    color: var(--lg-dm-text-info);
+  }
+
+  /* Accordions & Split Nav */
+  .accordion-button {
+    background-color: var(--lg-dm-bg-elevated);
+    color: var(--lg-dm-text-primary);
+  }
+
+  .accordion-item {
+    background-color: var(--lg-dm-bg-surface);
+    border-color: var(--lg-dm-border-subtle);
+  }
+
+  .split-button-nav .nav-link {
+    background-color: var(--lg-dm-bg-elevated);
+    color: var(--lg-dm-text-secondary);
+  }
+
+  .split-button-nav .list-group-item {
+    background-color: var(--lg-dm-bg-surface-alt);
+  }
+
+  /* Content Boxes & Typography */
+  .s-lib-box-title {
+    background-image: none;
+    background-color: transparent; /* Ensures old gradient fallbacks don't linger */
+    color: var(--lg-dm-text-bright);
+  }
+
+  .s-lib-box {
+    background-color: var(--lg-dm-bg-surface);
+    border-color: var(--lg-dm-border-subtle);
+  }
+
+  .s-lib-box.s-lib-box-std {
+    background-color: var(--lg-dm-bg-surface);
+    color: var(--lg-dm-text-primary);
+  }
+
+  .s-lib-box-content a {
+    color: var(--lg-dm-text-link);
+  }
+
+  /* Footer */
+  #s-lib-footer-public {
+    background-color: var(--lg-dm-bg-base);
+    color: var(--lg-dm-text-muted);
+  }
+}
+
+
+html[data-dark-mode="enabled"][data-theme="dark"]{
+  @include dark-mode;
+}
