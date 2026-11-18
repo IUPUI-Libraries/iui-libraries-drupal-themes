@@ -45,7 +45,8 @@
     }
 
     #s-lg-index-list .accordion-button {
-        background-color: #eeeeee;
+        background-color: var(--lg-dm-bg-elevated) !important;
+        color: var(--lg-dm-text-primary) !important;
     }
 
     /* Rivet overrides for dark mode */

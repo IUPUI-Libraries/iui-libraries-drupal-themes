@@ -175,7 +175,8 @@ html[data-dark-mode=enabled][data-theme=dark] #s-lib-footer-login-link a {
   color: #d1d1d1;
 }
 html[data-dark-mode=enabled][data-theme=dark] #s-lg-index-list .accordion-button {
-  background-color: #eeeeee;
+  background-color: var(--lg-dm-bg-elevated) !important;
+  color: var(--lg-dm-text-primary) !important;
 }
 html[data-dark-mode=enabled][data-theme=dark] .rvt-footer-base--light .rvt-footer-base__inner {
   border: none;
