@@ -66,6 +66,33 @@ a:visited, a:visited:hover {
   z-index: 3;
 }
 
+/* LibGuide Footer */
+#ul-footer .iui-link-white-plain,
+#ul-footer .iui-link-white-plain:visited {
+  color: #fff;
+  text-decoration: none;
+}
+#ul-footer .iui-link-white-plain:hover,
+#ul-footer .iui-link-white-plain:active,
+#ul-footer .iui-link-white-plain:focus,
+#ul-footer .iui-link-white-plain:visited:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+#ul-footer .iui-footer-social-media-svg {
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+#ul-footer .iui-footer-social-media-svg:hover {
+  border: none;
+}
+#ul-footer .iui-footer-social-media-svg:hover circle {
+  fill: #fff;
+}
+#ul-footer .iui-footer-social-media-svg:hover path {
+  fill: #990000;
+}
+
 /* Dark mode color palette */
 :root {
   --lg-dm-bg-base: #1A1A1A;
