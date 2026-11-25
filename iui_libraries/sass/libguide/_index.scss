@@ -1,10 +1,10 @@
 // Index for Libguide styles for the IUI Libraries theme.
 
-// General IUI Libraries styles for libguides.
-@use '../theme/dark-mode';
-
 // Libguide specific styles created by IUI Libraries theme.
 @use 'buttons';
 @use 'overrides';
 @use 'header';
 @use 'libguide-dark-mode';
+
+// General IUI Libraries styles for libguides.
+@use '../theme/dark-mode';
