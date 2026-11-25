@@ -126,6 +126,7 @@ html[data-dark-mode=enabled][data-theme=dark] {
   /* Accordions & Split Nav */
   /* Content Boxes & Typography */
   /* Footer */
+  /* Copied from LibGuide Inline 11/25/26 */
 }
 html[data-dark-mode=enabled][data-theme=dark] .s-lib-header h1 {
   color: #ffffff;
@@ -263,6 +264,25 @@ html[data-dark-mode=enabled][data-theme=dark] .s-lib-box-content a {
 html[data-dark-mode=enabled][data-theme=dark] #s-lib-footer-public {
   background-color: var(--lg-dm-bg-base);
   color: var(--lg-dm-text-muted);
+}
+html[data-dark-mode=enabled][data-theme=dark] span.rvt-header-menu__link {
+  color: #74b9f5;
+  text-decoration: underline;
+}
+html[data-dark-mode=enabled][data-theme=dark] span.rvt-header-menu__link:hover {
+  text-decoration: none;
+  color: #d1d1d1;
+}
+html[data-dark-mode=enabled][data-theme=dark] div.s-lib-color-lt-grey a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+html[data-dark-mode=enabled][data-theme=dark] div.s-lib-color-lt-grey a:hover {
+  color: #f2f2f2;
+  text-decoration: underline;
+}
+html[data-dark-mode=enabled][data-theme=dark] .btn-help-popover {
+  color: #6c757d;
 }
 
 /* Dark Mode styles for the IUI Libraries theme. */
