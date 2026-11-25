@@ -236,7 +236,20 @@
   .btn-help-popover {
     color: #6c757d;
   }
+
+  /* Breadcrumbs */
+  #s-lib-bc-page{
+    color: white !important;
+  }
+
+  .breadcrumb-item+.breadcrumb-item::before,
+  .breadcrumb-item.active
+  {
+    color: white;
+  }
+
 }
+
 
 
 html[data-dark-mode="enabled"][data-theme="dark"]{

@@ -127,6 +127,7 @@ html[data-dark-mode=enabled][data-theme=dark] {
   /* Content Boxes & Typography */
   /* Footer */
   /* Copied from LibGuide Inline 11/25/26 */
+  /* Breadcrumbs */
 }
 html[data-dark-mode=enabled][data-theme=dark] .s-lib-header h1 {
   color: #ffffff;
@@ -283,6 +284,13 @@ html[data-dark-mode=enabled][data-theme=dark] div.s-lib-color-lt-grey a:hover {
 }
 html[data-dark-mode=enabled][data-theme=dark] .btn-help-popover {
   color: #6c757d;
+}
+html[data-dark-mode=enabled][data-theme=dark] #s-lib-bc-page {
+  color: white !important;
+}
+html[data-dark-mode=enabled][data-theme=dark] .breadcrumb-item + .breadcrumb-item::before,
+html[data-dark-mode=enabled][data-theme=dark] .breadcrumb-item.active {
+  color: white;
 }
 
 /* Dark Mode styles for the IUI Libraries theme. */
